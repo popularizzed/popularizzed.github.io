@@ -6,7 +6,7 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4579600497260968" crossorigin="anonymous"></script>
   <meta name="color-scheme" content="light dark" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta name="description" content="Resize JPG, PNG, WebP and GIF images to exact dimensions or a target file size such as 50 KB, 100 KB or 200 KB. Free, private, browser-based image resizer for exam and document uploads." />
+  <meta name="description" content="Free online tools that run in your browser: resize images to exact pixels or KB, compress and merge PDFs, make stickers from images, and convert short videos to GIFs. Private — files never leave your device." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta property="og:title" content="Image Resizer — Resize images by pixels or KB" />
   <meta property="og:description" content="Resize images to exact dimensions and file-size limits directly in your browser." />
@@ -47,13 +47,54 @@
     @media(max-width:640px){.page{width:min(100% - 24px,1160px);padding-top:18px}.topbar{margin-bottom:28px}.menu-button{display:grid}.tool-nav{display:none;position:absolute;z-index:10;right:0;top:50px;width:min(280px,calc(100vw - 24px));padding:8px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}.tool-nav.is-open{display:grid}.tool-nav a{min-height:48px;border-bottom:0;border-left:3px solid transparent}.tool-nav a[aria-current="page"]{border-left-color:var(--accent);background:var(--accent-soft)}.intro,.route-intro{margin-bottom:20px}h1{max-width:11ch}.page-nav{margin-bottom:20px;gap:8px 14px}.upload-view{padding:10px}.dropzone{min-height:340px;padding:28px 17px}.preview-pane,.controls-pane{padding:18px}.preview-stage{min-height:260px;padding:12px}.preview-stage img{max-height:390px}.dimension-grid{grid-template-columns:1fr 38px 1fr;gap:7px}.row,.size-limit-grid{grid-template-columns:1fr}.how-it-works{grid-template-columns:1fr}.how-it-works>div{min-height:0}.content-area{margin-top:44px}.content-section{padding:34px 0}.article-card,.policy-block{padding:20px}.format-table,.format-table tbody,.format-table tr,.format-table th,.format-table td{display:block}.format-table thead{display:none}.format-table tr{border:1px solid var(--line);margin-top:10px}.format-table td{border:0;border-top:1px solid var(--line)}.format-table td:first-child{border-top:0;color:var(--ink);font-weight:700}.site-footer{display:block}.footer-links{justify-content:flex-start;margin-top:16px}.pdf-upload-panel{padding:10px}.pdf-dropzone{min-height:300px;padding:26px 16px}.compression-levels{grid-template-columns:1fr}.compression-levels button{border-right:0;border-bottom:1px solid var(--line-strong)}.compression-levels button:last-child{border-bottom:0}.merge-head{align-items:stretch;flex-direction:column}.merge-head .secondary-button{width:100%}.merge-item{grid-template-columns:34px minmax(0,1fr)}.merge-number{width:32px;height:32px}.merge-actions{grid-column:1/-1;justify-content:flex-end}.merge-footer{grid-template-columns:1fr}.merge-footer .primary-button{width:100%}.tool-explainer article{padding:20px}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
   </style>
+<style>
+/* ===== Added: sticker & GIF tools, rich footer ===== */
+.stk-editor,.gif-editor{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(320px,.85fr);min-width:0}
+.stk-editor[hidden],.gif-editor[hidden]{display:none!important}
+.stk-stage{min-height:380px}
+.stk-stage canvas{display:block;max-width:100%;max-height:480px;box-shadow:0 12px 30px rgba(0,0,0,.16)}
+.gif-stage{min-height:300px}
+.gif-stage video{display:block;max-width:100%;max-height:420px;background:#000}
+.gif-result-wrap{margin-top:18px;text-align:center}
+.gif-result-wrap img{max-width:100%;border:1px solid var(--line);background-color:var(--checker-b);background-image:linear-gradient(45deg,var(--checker-a) 25%,transparent 25%),linear-gradient(-45deg,var(--checker-a) 25%,transparent 25%),linear-gradient(45deg,transparent 75%,var(--checker-a) 75%),linear-gradient(-45deg,transparent 75%,var(--checker-a) 75%);background-size:24px 24px;background-position:0 0,0 12px,12px -12px,-12px 0}
+.progress-track{height:8px;margin-top:14px;background:var(--surface-2);border:1px solid var(--line);overflow:hidden}
+.progress-fill{height:100%;width:0;background:var(--accent);transition:width .2s ease}
+.color-row{display:flex;align-items:center;gap:12px}
+.color-row span{color:var(--muted);font-size:.82rem;font-weight:600}
+.range-value{font-family:"IBM Plex Mono",monospace;font-size:.78rem;color:var(--ink)}
+input[type=color]{width:52px;height:38px;border:1px solid var(--line-strong);background:var(--surface);padding:3px;cursor:pointer}
+.faq-list{margin-top:26px}
+.tool-faq{margin-top:34px}
+.tool-faq h2{margin:0 0 6px;font-size:clamp(1.3rem,2.6vw,1.8rem);letter-spacing:-.03em}
+/* Rich footer */
+.site-footer-rich{margin-top:70px;border-top:1px solid var(--line);padding:46px 0 10px}
+.footer-grid{display:grid;grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(120px,.6fr));gap:30px}
+.footer-brand strong{display:block;font-size:1.05rem;letter-spacing:-.02em;margin-bottom:9px}
+.footer-brand p{margin:0;color:var(--muted);font-size:.86rem;line-height:1.65;max-width:340px}
+.site-footer-rich h4{margin:0 0 13px;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.site-footer-rich nav a{display:block;color:var(--muted);font-size:.88rem;font-weight:600;text-decoration:none;margin-bottom:9px}
+.site-footer-rich nav a:hover{color:var(--accent)}
+.footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 22px;margin-top:36px;padding:18px 0 8px;border-top:1px solid var(--line);color:var(--faint);font-size:.8rem}
+@media(max-width:860px){.stk-editor,.gif-editor{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.stk-stage{min-height:280px}.footer-grid{grid-template-columns:1fr}.site-footer-rich{padding-top:34px}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Popularizzed free online tools","itemListElement":[
+{"@type":"ListItem","position":1,"item":{"@type":"WebApplication","name":"Image Resizer","url":"https://popularizzed.github.io/#image-resizer","applicationCategory":"MultimediaApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}},
+{"@type":"ListItem","position":2,"item":{"@type":"WebApplication","name":"PDF Compressor","url":"https://popularizzed.github.io/#/pdf-compress","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}},
+{"@type":"ListItem","position":3,"item":{"@type":"WebApplication","name":"PDF Merger","url":"https://popularizzed.github.io/#/pdf-merge","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}},
+{"@type":"ListItem","position":4,"item":{"@type":"WebApplication","name":"Sticker Maker","url":"https://popularizzed.github.io/#/sticker-maker","applicationCategory":"MultimediaApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}},
+{"@type":"ListItem","position":5,"item":{"@type":"WebApplication","name":"GIF Maker","url":"https://popularizzed.github.io/#/gif-maker","applicationCategory":"MultimediaApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}}
+]}
+</script>
+
 </head>
 <body>
 <main class="page">
   <div class="local-warning" id="localWarning" role="status"><strong>Local-file mode:</strong> browsers isolate <code>file://</code> pages into separate security origins, so PDF libraries and framed previews may be blocked. Use the <a href="https://popularizzed.github.io/" rel="noopener noreferrer">HTTPS version</a> for normal operation.</div>
-  <div class="topbar"><button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="toolNav" aria-label="Open tools menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><nav class="tool-nav" id="toolNav" aria-label="Tools"><a href="#image-resizer" data-route-link="image">Image resizer</a><a href="#/pdf-compress" data-route-link="compress">PDF compression</a><a href="#/pdf-merge" data-route-link="merge">PDF merge</a></nav></div>
+  <div class="topbar"><button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="toolNav" aria-label="Open tools menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><nav class="tool-nav" id="toolNav" aria-label="Tools"><a href="#image-resizer" data-route-link="image">Image resizer</a><a href="#/pdf-compress" data-route-link="compress">PDF compression</a><a href="#/pdf-merge" data-route-link="merge">PDF merge</a><a href="#/sticker-maker" data-route-link="sticker">Sticker maker</a><a href="#/gif-maker" data-route-link="gif">GIF maker</a></nav></div>
   <section class="route-view" id="imageRoute" data-route="image">
-  <header class="route-intro"><h1>Resize any image.</h1><p>Choose the exact width, height, and file-size limit, then download a crisp PNG, JPG, or WebP.</p><div class="tool-jump"><a class="primary-button" href="#tool">Resize an image</a><a class="secondary-button" href="#pdf-compress">Compress a PDF</a><a class="secondary-button" href="#pdf-merge">Merge PDFs</a></div></header>
+  <header class="route-intro"><h1>Resize any image.</h1><p>Choose the exact width, height, and file-size limit, then download a crisp PNG, JPG, or WebP.</p><div class="tool-jump"><a class="primary-button" href="#tool">Resize an image</a><a class="secondary-button" href="#pdf-compress">Compress a PDF</a><a class="secondary-button" href="#pdf-merge">Merge PDFs</a><a class="secondary-button" href="#/sticker-maker">Make a sticker</a><a class="secondary-button" href="#/gif-maker">Make a GIF</a></div></header>
   <nav class="page-nav" aria-label="Page sections"><a href="#tool">Resize tool</a><a href="#exam-guide">Exam upload guide</a><a href="#formats">Format guide</a><a href="#faq">FAQ</a><a href="#privacy">Privacy</a><a href="#about">About</a></nav>
   <section class="workspace" id="tool" aria-label="Image resizing workspace">
     <div class="upload-view" id="uploadView">
@@ -162,6 +203,48 @@
     </section>
   </section>
 
+  <section class="route-view" id="stickerRoute" data-route="sticker" hidden>
+  <header class="route-intro"><h1>Make a sticker from any image.</h1><p>Add a clean die-cut outline to a photo or PNG, preview it instantly, and download a print-quality PNG or a WhatsApp-ready sticker — right in your browser.</p><div class="tool-jump"><a class="primary-button" href="#/sticker-maker">Make a sticker</a><a class="secondary-button" href="#image-resizer">Resize an image</a><a class="secondary-button" href="#/gif-maker">Make a GIF</a></div></header>
+  <div class="workspace">
+    <div class="upload-view" id="stkUploadView">
+      <div class="dropzone" id="stkDropzone" tabindex="0" role="button" aria-label="Choose an image to turn into a sticker"><div class="upload-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.4L12 15l-1.9-4.6L5.5 9l4.6-1.4z"/><path d="M18.5 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></div><h2>Drop your image here or choose a file</h2><p>Transparent PNGs give a true die-cut outline. Photos work too — the outline follows the frame.</p><button class="choose-button" id="stkChooseButton" type="button">Choose image</button><p class="file-hint">PNG, JPG or WebP · up to 40 MB · processed on this device</p></div>
+      <input type="file" id="stkFileInput" accept="image/png,image/jpeg,image/webp" hidden>
+    </div>
+    <div class="stk-editor" id="stkEditor" hidden>
+      <div class="preview-pane"><div class="file-bar"><div class="file-info"><div class="filename" id="stkFilename">image</div><div class="file-meta" id="stkFileMeta"></div></div><button class="icon-button" id="stkReplaceButton" type="button" aria-label="Choose a different image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 4v5h-5"/></svg></button></div><div class="preview-stage stk-stage"><canvas id="stkCanvas" width="512" height="512"></canvas></div><p class="preview-note">The checkerboard is transparency. Your downloaded sticker keeps a transparent background around the outline.</p></div>
+      <div class="controls-pane">
+        <div class="control-section"><h3 class="section-title">Sticker style</h3><div class="segment" role="group" aria-label="Sticker style"><button type="button" class="is-active" data-stk-style="diecut">Die-cut outline</button><button type="button" data-stk-style="circle">Circle frame</button><button type="button" data-stk-style="rounded">Rounded frame</button></div><p class="mode-help" id="stkStyleHelp">The outline traces the shape of your image, like a real printed sticker.</p></div>
+        <div class="control-section"><h3 class="section-title">Outline</h3><div class="quality-head"><label class="field-label" for="stkOutline">Thickness</label><span class="range-value" id="stkOutlineValue">14 px</span></div><input type="range" id="stkOutline" min="0" max="40" step="1" value="14"><div class="color-row" style="margin-top:14px"><input type="color" id="stkColor" value="#ffffff" aria-label="Outline colour"><span>Outline colour — white is the classic sticker look.</span></div></div>
+        <div class="control-section"><h3 class="section-title">Download</h3><button class="primary-button" id="stkPngButton" type="button">Download PNG sticker</button><button class="secondary-button" id="stkWaButton" type="button">Download WhatsApp sticker (512 × 512 WebP)</button><button class="secondary-button" id="stkResetButton" type="button">Start over</button><p class="status" id="stkStatus" role="status"></p></div>
+      </div>
+    </div>
+  </div>
+  <section class="how-it-works" aria-label="How the sticker maker works"><div class="lead"><h2>Three steps.<br>Pro stickers.</h2><p>Designed in your browser.</p></div><div><span class="step-no">01</span><h3>Choose</h3><p>Upload a PNG, JPG, or WebP image — a portrait, logo, pet, or product shot.</p></div><div><span class="step-no">02</span><h3>Style</h3><p>Pick a die-cut outline or a neat frame, then set the outline thickness and colour.</p></div><div><span class="step-no">03</span><h3>Download</h3><p>Save a transparent PNG, or a 512 × 512 WebP that drops straight into WhatsApp sticker packs.</p></div></section>
+  <div class="tool-explainer"><article><h2>What makes a good sticker?</h2><p>A sticker reads at a glance: a bold outline, a simple shape, and contrast against any chat background. The die-cut style follows the transparent edges of a PNG exactly, the way printed vinyl stickers are cut. For ordinary photos, the circle and rounded frames crop the picture into a tidy badge while the outline keeps it popping on light and dark backgrounds alike.</p></article><article><h2>Made for WhatsApp, Telegram &amp; iMessage</h2><p>WhatsApp stickers must be 512 × 512 pixels in WebP format, under 100 KB each — the WhatsApp download button produces exactly that, shrinking quality only as much as needed to fit the limit. The PNG download keeps full resolution with transparency for Telegram, Discord, print, or your own sticker packs.</p></article></div>
+  <div class="tool-faq"><h2>Sticker maker — questions</h2><div class="faq-list"><details><summary>How do I make a sticker from a photo without a transparent background?</summary><div class="faq-answer">Use the Circle frame or Rounded frame style. The photo is cropped into the frame and given the same bold outline, so it looks like a finished sticker even without transparency. If you have a PNG with the background already removed, Die-cut outline traces the real shape.</div></details><details><summary>What size is a WhatsApp sticker?</summary><div class="faq-answer">512 × 512 pixels, WebP format, under 100 KB per sticker, with a transparent background. The WhatsApp download button exports exactly that specification.</div></details><details><summary>Are my images uploaded anywhere?</summary><div class="faq-answer">No. The sticker is drawn on a canvas inside your browser. Your image never leaves your device, and nothing is stored on a server.</div></details></div></div>
+  </section>
+
+  <section class="route-view" id="gifRoute" data-route="gif" hidden>
+  <header class="route-intro"><h1>Turn a short video into a GIF.</h1><p>Pick any moment of a video, trim up to five seconds, and export a smooth looping GIF — no uploads, no watermarks, no sign-up.</p><div class="tool-jump"><a class="primary-button" href="#/gif-maker">Make a GIF</a><a class="secondary-button" href="#/sticker-maker">Make a sticker</a><a class="secondary-button" href="#image-resizer">Resize an image</a></div></header>
+  <div class="workspace">
+    <div class="upload-view" id="gifUploadView">
+      <div class="dropzone" id="gifDropzone" tabindex="0" role="button" aria-label="Choose a video to convert to a GIF"><div class="upload-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 5v14M17 5v14M3 10h4M3 14h4M17 10h4M17 14h4"/></svg></div><h2>Drop your video here or choose a file</h2><p>Short clips work best. You will trim a window of up to 5 seconds to turn into the GIF.</p><button class="choose-button" id="gifChooseButton" type="button">Choose video</button><p class="file-hint">MP4, WebM or MOV · processed on this device</p></div>
+      <input type="file" id="gifFileInput" accept="video/mp4,video/webm,video/quicktime,video/*" hidden>
+    </div>
+    <div class="gif-editor" id="gifEditor" hidden>
+      <div class="preview-pane"><div class="file-bar"><div class="file-info"><div class="filename" id="gifFilename">video</div><div class="file-meta" id="gifFileMeta"></div></div><button class="icon-button" id="gifReplaceButton" type="button" aria-label="Choose a different video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 4v5h-5"/></svg></button></div><div class="preview-stage gif-stage"><video id="gifVideo" controls muted playsinline preload="auto"></video></div><p class="preview-note">Play the video and pause at the moment you want, or drag the start slider — the GIF begins there.</p><div class="gif-result-wrap" id="gifResultWrap" hidden><img id="gifResultImg" alt="Your generated GIF"><p class="preview-note" id="gifResultMeta"></p></div></div>
+      <div class="controls-pane">
+        <div class="control-section"><h3 class="section-title">Trim (up to 5 seconds)</h3><div class="quality-head"><label class="field-label" for="gifStart">Start time</label><span class="range-value" id="gifStartValue">0.0 s</span></div><input type="range" id="gifStart" min="0" max="0" step="0.1" value="0"><h4 class="field-label" style="margin-top:16px">Length</h4><div class="segment" role="group" aria-label="GIF length in seconds"><button type="button" data-gif-dur="1">1s</button><button type="button" data-gif-dur="2">2s</button><button type="button" class="is-active" data-gif-dur="3">3s</button><button type="button" data-gif-dur="4">4s</button><button type="button" data-gif-dur="5">5s</button></div></div>
+        <div class="control-section"><h3 class="section-title">Size &amp; smoothness</h3><h4 class="field-label">Width</h4><div class="segment" role="group" aria-label="GIF width"><button type="button" data-gif-w="320">320 px</button><button type="button" class="is-active" data-gif-w="480">480 px</button><button type="button" data-gif-w="640">640 px</button></div><h4 class="field-label" style="margin-top:16px">Frames per second</h4><div class="segment" role="group" aria-label="Frames per second"><button type="button" data-gif-fps="10">10 fps</button><button type="button" class="is-active" data-gif-fps="12">12 fps</button><button type="button" data-gif-fps="15">15 fps</button></div><p class="mode-help">Wider and faster looks smoother but makes a bigger file. 480 px at 12 fps suits chats and social posts.</p></div>
+        <div class="control-section"><h3 class="section-title">Create</h3><button class="primary-button" id="gifCreateButton" type="button">Create GIF</button><div class="progress-track" id="gifProgressTrack" hidden><div class="progress-fill" id="gifProgressFill"></div></div><button class="secondary-button" id="gifCancelButton" type="button" hidden>Cancel</button><a class="secondary-button" id="gifDownloadButton" href="#" download="popularizzed-gif.gif" hidden style="text-align:center;text-decoration:none;display:none">Download GIF</a><p class="status" id="gifStatus" role="status"></p></div>
+      </div>
+    </div>
+  </div>
+  <section class="how-it-works" aria-label="How the GIF maker works"><div class="lead"><h2>Three steps.<br>Loop ready.</h2><p>Converted in your browser.</p></div><div><span class="step-no">01</span><h3>Choose</h3><p>Upload an MP4, WebM, or MOV clip from your phone or computer.</p></div><div><span class="step-no">02</span><h3>Trim</h3><p>Slide to the moment, choose up to 5 seconds, a width, and a frame rate.</p></div><div><span class="step-no">03</span><h3>Download</h3><p>Preview the looping GIF and save it, ready for chats, posts, and reactions.</p></div></section>
+  <div class="tool-explainer"><article><h2>Why cap the GIF at 5 seconds?</h2><p>The best GIFs are short: a reaction, a goal, a punchline. Five seconds keeps the file small enough to load instantly in WhatsApp, Instagram, X, and Discord, while the frame-rate and width controls let you trade a little smoothness for size when a chat app has upload limits.</p></article><article><h2>Private by design</h2><p>Your video is decoded and re-encoded entirely on your device using your browser — frames never pass through a server. That means no upload queues, no file-size accounts, and nothing to delete later. What you make is yours the moment it renders.</p></article></div>
+  <div class="tool-faq"><h2>GIF maker — questions</h2><div class="faq-list"><details><summary>Which video formats can I convert?</summary><div class="faq-answer">Any format your browser can play — MP4 and WebM everywhere, MOV on most modern devices. If a file will not preview, convert it to MP4 first and try again.</div></details><details><summary>How big will my GIF be?</summary><div class="faq-answer">It depends on motion, width, and frame rate. A 3-second, 480 px, 12 fps GIF of a typical clip is usually 1–4 MB. Lower the width or frame rate if you need it smaller.</div></details><details><summary>Does the GIF keep the video sound?</summary><div class="faq-answer">No — GIF is a silent image format. The output loops the picture only, which is what makes it perfect for reactions and memes.</div></details></div></div>
+  </section>
+
   <div class="content-area image-route-content" id="imageContent">
     <section class="content-section" id="exam-guide">
       <div class="content-heading"><h2>Resize photos and signatures for online forms</h2><p>Application portals often check both pixel dimensions and file size. This tool handles both requirements in one export, without uploading your image to a server.</p></div>
@@ -244,10 +327,288 @@
     </section>
   </div>
 
-  <footer class="site-footer"><span>Image and PDF tools in your browser.</span><nav class="footer-links" aria-label="Footer links"><a href="#image-resizer">Image tool</a><a href="#pdf-compress">PDF compression</a><a href="#pdf-merge">PDF merge</a><a href="#faq">FAQ</a><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="https://github.com/popularizzed/popularizzed.github.io" target="_blank" rel="noopener noreferrer">Repository</a></nav></footer>
+  <footer class="site-footer-rich">
+    <div class="footer-grid">
+      <div class="footer-brand"><strong>Popularizzed</strong><p>Free image, PDF, sticker and GIF tools that run entirely in your browser. No uploads, no sign-ups — your files never leave your device.</p></div>
+      <nav aria-label="Tools"><h4>Tools</h4><a href="#image-resizer">Image resizer</a><a href="#/pdf-compress">PDF compression</a><a href="#/pdf-merge">PDF merge</a><a href="#/sticker-maker">Sticker maker</a><a href="#/gif-maker">GIF maker</a></nav>
+      <nav aria-label="Guides"><h4>Guides</h4><a href="#exam-guide">Exam upload guide</a><a href="#formats">Image formats guide</a><a href="#faq">FAQ</a></nav>
+      <nav aria-label="Site"><h4>Site</h4><a href="#about">About</a><a href="#privacy">Privacy policy</a><a href="#terms">Terms of use</a><a href="https://github.com/popularizzed/popularizzed.github.io" target="_blank" rel="noopener noreferrer">Repository</a></nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Popularizzed. All rights reserved.</span><span>Built for students, creators, and everyone who uploads files online.</span></div>
+  </footer>
 </main>
 <canvas id="canvas" hidden></canvas>
 <script integrity="sha384-D8jMHbaR5/OP4M56U/trdZPE+XGsOs2Z1lyBlsrjEyW35gDVrobxKBeBigiyfOOj" crossorigin="anonymous" src="data:application/javascript;base64,KGZ1bmN0aW9uKCl7J3VzZSBzdHJpY3QnOwp2YXIgTUFYX0JZVEVTPTQwKjEwMjQqMTAyNCxNQVhfU0lERT0xMjAwMCxNQVhfUElYRUxTPTgwMDAwMDAwOwp2YXIgZmlsZUlucHV0PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdmaWxlSW5wdXQnKSxkcm9wem9uZT1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnZHJvcHpvbmUnKSx1cGxvYWRWaWV3PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd1cGxvYWRWaWV3JyksZWRpdG9yVmlldz1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnZWRpdG9yVmlldycpLHByZXZpZXc9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3ByZXZpZXcnKSxmaWxlbmFtZT1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnZmlsZW5hbWUnKSxmaWxlTWV0YT1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnZmlsZU1ldGEnKSx3aWR0aElucHV0PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd3aWR0aElucHV0JyksaGVpZ2h0SW5wdXQ9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2hlaWdodElucHV0JykscmF0aW9CdXR0b249ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3JhdGlvQnV0dG9uJyksZml0QnV0dG9ucz1BcnJheS5wcm90b3R5cGUuc2xpY2UuY2FsbChkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCdbZGF0YS1maXRdJykpLG1vZGVIZWxwPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdtb2RlSGVscCcpLGJhY2tncm91bmRSb3c9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2JhY2tncm91bmRSb3cnKSxiYWNrZ3JvdW5kSW5wdXQ9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2JhY2tncm91bmRJbnB1dCcpLGZvcm1hdFNlbGVjdD1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnZm9ybWF0U2VsZWN0JykscXVhbGl0eVJvdz1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncXVhbGl0eVJvdycpLHF1YWxpdHlJbnB1dD1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncXVhbGl0eUlucHV0JykscXVhbGl0eVZhbHVlPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdxdWFsaXR5VmFsdWUnKSxxdWFsaXR5TGFiZWw9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3F1YWxpdHlMYWJlbCcpLHNpemVQcmVzZXRTZWxlY3Q9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3NpemVQcmVzZXRTZWxlY3QnKSxjdXN0b21TaXplRmllbGQ9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2N1c3RvbVNpemVGaWVsZCcpLHRhcmdldFNpemVJbnB1dD1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndGFyZ2V0U2l6ZUlucHV0Jyksc2l6ZUxpbWl0Tm90ZT1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnc2l6ZUxpbWl0Tm90ZScpLHNpemVIZWxwPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdzaXplSGVscCcpLG5hbWVJbnB1dD1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbmFtZUlucHV0Jyksc3RhdHVzPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdzdGF0dXMnKSxkb3dubG9hZEJ1dHRvbj1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnZG93bmxvYWRCdXR0b24nKSxjYW52YXM9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2NhbnZhcycpLGN0eD1jYW52YXMuZ2V0Q29udGV4dCgnMmQnKTsKdmFyIHNvdXJjZUltYWdlPW51bGwsc291cmNlVXJsPScnLG9yaWdpbmFsV2lkdGg9MCxvcmlnaW5hbEhlaWdodD0wLGFzcGVjdFJhdGlvPTEscmF0aW9Mb2NrZWQ9dHJ1ZSxmaXRNb2RlPSdjb3ZlcicsYWN0aXZlRGltZW5zaW9uPScnOwpmdW5jdGlvbiBieXRlc0xhYmVsKGJ5dGVzKXtpZihieXRlczwxMDI0KjEwMjQpcmV0dXJuIE1hdGgubWF4KDEsTWF0aC5yb3VuZChieXRlcy8xMDI0KSkrJyBLQic7cmV0dXJuKGJ5dGVzLygxMDI0KjEwMjQpKS50b0ZpeGVkKDEpKycgTUInfQpmdW5jdGlvbiBzZXRTdGF0dXMobWVzc2FnZSxpc0Vycm9yKXtzdGF0dXMudGV4dENvbnRlbnQ9bWVzc2FnZXx8Jyc7c3RhdHVzLmNsYXNzTGlzdC50b2dnbGUoJ2lzLWVycm9yJywhIWlzRXJyb3IpfQpmdW5jdGlvbiBvcGVuUGlja2VyKCl7ZmlsZUlucHV0LnZhbHVlPScnO2ZpbGVJbnB1dC5jbGljaygpfQpmdW5jdGlvbiBzYWZlQmFzZU5hbWUobmFtZSl7cmV0dXJuIG5hbWUucmVwbGFjZSgvXC5bXi5dKyQvLCcnKS5yZXBsYWNlKC9bXmEtekEtWjAtOS1fIF0vZywnJykudHJpbSgpLnJlcGxhY2UoL1xzKy9nLCctJyl8fCdyZXNpemVkLWltYWdlJ30KZnVuY3Rpb24gc2hvd1VwbG9hZEVycm9yKG1lc3NhZ2Upe3ZhciBoaW50PWRyb3B6b25lLnF1ZXJ5U2VsZWN0b3IoJy5maWxlLWhpbnQnKTtoaW50LnRleHRDb250ZW50PW1lc3NhZ2U7aGludC5zdHlsZS5jb2xvcj0ndmFyKC0tZGFuZ2VyKSd9CmZ1bmN0aW9uIGxvYWRGaWxlKGZpbGUpe2lmKCFmaWxlKXJldHVybjtzZXRTdGF0dXMoJycsZmFsc2UpO2lmKCEvXmltYWdlXC8oanBlZ3xwbmd8d2VicHxnaWYpJC8udGVzdChmaWxlLnR5cGUpKXtzaG93VXBsb2FkRXJyb3IoJ0Nob29zZSBhIEpQRywgUE5HLCBXZWJQLCBvciBHSUYgaW1hZ2UuJyk7cmV0dXJufWlmKGZpbGUuc2l6ZT5NQVhfQllURVMpe3Nob3dVcGxvYWRFcnJvcignVGhhdCBpbWFnZSBpcyBvdmVyIDQwIE1CLiBDaG9vc2UgYSBzbWFsbGVyIGZpbGUuJyk7cmV0dXJufXZhciB1cmw9VVJMLmNyZWF0ZU9iamVjdFVSTChmaWxlKSxpbWc9bmV3IEltYWdlKCk7aW1nLm9ubG9hZD1mdW5jdGlvbigpe2lmKCFpbWcubmF0dXJhbFdpZHRofHwhaW1nLm5hdHVyYWxIZWlnaHQpe1VSTC5yZXZva2VPYmplY3RVUkwodXJsKTtzaG93VXBsb2FkRXJyb3IoJ1RoaXMgaW1hZ2UgY291bGQgbm90IGJlIHJlYWQuIFRyeSBhbm90aGVyIGZpbGUuJyk7cmV0dXJufWlmKGltZy5uYXR1cmFsV2lkdGg+TUFYX1NJREV8fGltZy5uYXR1cmFsSGVpZ2h0Pk1BWF9TSURFfHxpbWcubmF0dXJhbFdpZHRoKmltZy5uYXR1cmFsSGVpZ2h0Pk1BWF9QSVhFTFMpe1VSTC5yZXZva2VPYmplY3RVUkwodXJsKTtzaG93VXBsb2FkRXJyb3IoJ1RoYXQgaW1hZ2UgaXMgdG9vIGxhcmdlIHRvIHByb2Nlc3Mgc2FmZWx5LiBVc2UgYSBmaWxlIHVuZGVyIDEyLDAwMCBweCBwZXIgc2lkZSBhbmQgODAgbWVnYXBpeGVscy4nKTtyZXR1cm59aWYoc291cmNlVXJsKVVSTC5yZXZva2VPYmplY3RVUkwoc291cmNlVXJsKTtzb3VyY2VVcmw9dXJsO3NvdXJjZUltYWdlPWltZztvcmlnaW5hbFdpZHRoPWltZy5uYXR1cmFsV2lkdGg7b3JpZ2luYWxIZWlnaHQ9aW1nLm5hdHVyYWxIZWlnaHQ7YXNwZWN0UmF0aW89b3JpZ2luYWxXaWR0aC9vcmlnaW5hbEhlaWdodDt3aWR0aElucHV0LnZhbHVlPW9yaWdpbmFsV2lkdGg7aGVpZ2h0SW5wdXQudmFsdWU9b3JpZ2luYWxIZWlnaHQ7ZmlsZW5hbWUudGV4dENvbnRlbnQ9ZmlsZS5uYW1lO2ZpbGVNZXRhLnRleHRDb250ZW50PW9yaWdpbmFsV2lkdGgrJyDDlyAnK29yaWdpbmFsSGVpZ2h0KycgUFggwrcgJytieXRlc0xhYmVsKGZpbGUuc2l6ZSk7bmFtZUlucHV0LnZhbHVlPXNhZmVCYXNlTmFtZShmaWxlLm5hbWUpKyctcmVzaXplZCc7cHJldmlldy5zcmM9c291cmNlVXJsO3VwbG9hZFZpZXcuc3R5bGUuZGlzcGxheT0nbm9uZSc7ZWRpdG9yVmlldy5jbGFzc0xpc3QuYWRkKCdpcy12aXNpYmxlJyk7c2V0U3RhdHVzKCcnLGZhbHNlKX07aW1nLm9uZXJyb3I9ZnVuY3Rpb24oKXtVUkwucmV2b2tlT2JqZWN0VVJMKHVybCk7c2hvd1VwbG9hZEVycm9yKCdUaGlzIGltYWdlIGNvdWxkIG5vdCBiZSByZWFkLiBUcnkgYW5vdGhlciBmaWxlLicpfTtpbWcuc3JjPXVybH0KZnVuY3Rpb24gcmVzZXRBcHAoKXtpZihzb3VyY2VVcmwpVVJMLnJldm9rZU9iamVjdFVSTChzb3VyY2VVcmwpO3NvdXJjZVVybD0nJztzb3VyY2VJbWFnZT1udWxsO3ByZXZpZXcucmVtb3ZlQXR0cmlidXRlKCdzcmMnKTtmaWxlSW5wdXQudmFsdWU9Jyc7ZWRpdG9yVmlldy5jbGFzc0xpc3QucmVtb3ZlKCdpcy12aXNpYmxlJyk7dXBsb2FkVmlldy5zdHlsZS5kaXNwbGF5PScnO3ZhciBoaW50PWRyb3B6b25lLnF1ZXJ5U2VsZWN0b3IoJy5maWxlLWhpbnQnKTtoaW50LnRleHRDb250ZW50PSdKUEcsIFBORywgV2ViUCBvciBHSUYgwrcgdXAgdG8gNDAgTUInO2hpbnQuc3R5bGUuY29sb3I9Jyc7ZHJvcHpvbmUuZm9jdXMoKX0KZnVuY3Rpb24gc3luY0Zyb21XaWR0aCgpe2lmKCFyYXRpb0xvY2tlZHx8YWN0aXZlRGltZW5zaW9uPT09J2hlaWdodCcpcmV0dXJuO3ZhciB3PXBhcnNlSW50KHdpZHRoSW5wdXQudmFsdWUsMTApO2lmKHc+MCloZWlnaHRJbnB1dC52YWx1ZT1NYXRoLm1heCgxLE1hdGgucm91bmQody9hc3BlY3RSYXRpbykpfQpmdW5jdGlvbiBzeW5jRnJvbUhlaWdodCgpe2lmKCFyYXRpb0xvY2tlZHx8YWN0aXZlRGltZW5zaW9uPT09J3dpZHRoJylyZXR1cm47dmFyIGg9cGFyc2VJbnQoaGVpZ2h0SW5wdXQudmFsdWUsMTApO2lmKGg+MCl3aWR0aElucHV0LnZhbHVlPU1hdGgubWF4KDEsTWF0aC5yb3VuZChoKmFzcGVjdFJhdGlvKSl9CmZ1bmN0aW9uIHVwZGF0ZUZvcm1hdFVpKCl7dmFyIGlzUG5nPWZvcm1hdFNlbGVjdC52YWx1ZT09PSdpbWFnZS9wbmcnLGhhc0xpbWl0PSEhc2l6ZVByZXNldFNlbGVjdC52YWx1ZTtxdWFsaXR5Um93LnN0eWxlLmRpc3BsYXk9aXNQbmc/J25vbmUnOicnO3F1YWxpdHlMYWJlbC50ZXh0Q29udGVudD1oYXNMaW1pdD8nTWF4aW11bSBxdWFsaXR5JzonUXVhbGl0eSc7c2l6ZUhlbHAudGV4dENvbnRlbnQ9aXNQbmcmJmhhc0xpbWl0PydQTkcgY2Fubm90IHJlZHVjZSBxdWFsaXR5LiBJZiBpdCBleGNlZWRzIHRoZSBsaW1pdCwgY2hvb3NlIEpQRyBvciBXZWJQLic6aGFzTGltaXQ/J1RoZSB0b29sIGZpbmRzIHRoZSBoaWdoZXN0IEpQRyBvciBXZWJQIHF1YWxpdHkgYmVsb3cgeW91ciBsaW1pdC4nOidDaG9vc2UgYSBsaW1pdCBmb3IgZXhhbSBmb3JtcyBhbmQgZG9jdW1lbnQgcG9ydGFscy4nfQpmdW5jdGlvbiB1cGRhdGVTaXplVWkoKXt2YXIgdmFsdWU9c2l6ZVByZXNldFNlbGVjdC52YWx1ZSxpc0N1c3RvbT12YWx1ZT09PSdjdXN0b20nLGxpbWl0PWlzQ3VzdG9tP3RhcmdldFNpemVJbnB1dC52YWx1ZTp2YWx1ZTtjdXN0b21TaXplRmllbGQuaGlkZGVuPSFpc0N1c3RvbTtzaXplTGltaXROb3RlLnRleHRDb250ZW50PXZhbHVlPyhsaW1pdD9saW1pdCsnIEtCJzonQ3VzdG9tJyk6J09wdGlvbmFsJzt1cGRhdGVGb3JtYXRVaSgpO3NldFN0YXR1cygnJyxmYWxzZSl9CmZ1bmN0aW9uIGdldFRhcmdldEJ5dGVzKCl7dmFyIHZhbHVlPXNpemVQcmVzZXRTZWxlY3QudmFsdWU7aWYoIXZhbHVlKXJldHVybntieXRlczowfTt2YXIga2I9dmFsdWU9PT0nY3VzdG9tJz9wYXJzZUludCh0YXJnZXRTaXplSW5wdXQudmFsdWUsMTApOnBhcnNlSW50KHZhbHVlLDEwKTtpZigha2J8fGtiPDV8fGtiPjUwMDApcmV0dXJue2Vycm9yOidFbnRlciBhIGZpbGUtc2l6ZSBsaW1pdCBmcm9tIDUgS0IgdG8gNSwwMDAgS0IuJ307cmV0dXJue2J5dGVzOmtiKjEwMjQsa2I6a2J9fQpmdW5jdGlvbiB1cGRhdGVGaXRVaSgpe3ZhciBoZWxwPXtjb250YWluOidLZWVwcyB0aGUgd2hvbGUgaW1hZ2UgdmlzaWJsZSBhbmQgYWRkcyBzcGFjZSB3aGVuIG5lZWRlZC4nLGNvdmVyOidGaWxscyB0aGUgZnJhbWUgYW5kIGNyb3BzIG92ZXJmbG93IGZyb20gdGhlIGNlbnRlci4nLHN0cmV0Y2g6J1VzZXMgdGhlIGV4YWN0IHNpemUgYW5kIG1heSBjaGFuZ2UgdGhlIGltYWdlIHByb3BvcnRpb25zLid9O21vZGVIZWxwLnRleHRDb250ZW50PWhlbHBbZml0TW9kZV07YmFja2dyb3VuZFJvdy5jbGFzc0xpc3QudG9nZ2xlKCdpcy12aXNpYmxlJyxmaXRNb2RlPT09J2NvbnRhaW4nKX0KZnVuY3Rpb24gdmFsaWRhdGVEaW1lbnNpb25zKCl7dmFyIHc9cGFyc2VJbnQod2lkdGhJbnB1dC52YWx1ZSwxMCksaD1wYXJzZUludChoZWlnaHRJbnB1dC52YWx1ZSwxMCk7aWYoIXd8fCFofHx3PDF8fGg8MSlyZXR1cm57ZXJyb3I6J0VudGVyIGEgdmFsaWQgd2lkdGggYW5kIGhlaWdodC4nfTtpZih3Pk1BWF9TSURFfHxoPk1BWF9TSURFKXJldHVybntlcnJvcjonRWFjaCBzaWRlIG11c3QgYmUgMTIsMDAwIHB4IG9yIGxlc3MuJ307aWYodypoPk1BWF9QSVhFTFMpcmV0dXJue2Vycm9yOidUaGF0IG91dHB1dCBpcyB0b28gbGFyZ2UuIEtlZXAgaXQgdW5kZXIgODAgbWVnYXBpeGVscy4nfTtyZXR1cm57d2lkdGg6dyxoZWlnaHQ6aH19CmZ1bmN0aW9uIHJlbmRlckNhbnZhcyh3LGgpe2NhbnZhcy53aWR0aD13O2NhbnZhcy5oZWlnaHQ9aDtjdHguY2xlYXJSZWN0KDAsMCx3LGgpO2lmKGZpdE1vZGU9PT0nY29udGFpbicpe2N0eC5maWxsU3R5bGU9YmFja2dyb3VuZElucHV0LnZhbHVlO2N0eC5maWxsUmVjdCgwLDAsdyxoKTt2YXIgcz1NYXRoLm1pbih3L29yaWdpbmFsV2lkdGgsaC9vcmlnaW5hbEhlaWdodCksZHc9b3JpZ2luYWxXaWR0aCpzLGRoPW9yaWdpbmFsSGVpZ2h0KnM7Y3R4LmRyYXdJbWFnZShzb3VyY2VJbWFnZSwody1kdykvMiwoaC1kaCkvMixkdyxkaCl9ZWxzZSBpZihmaXRNb2RlPT09J2NvdmVyJyl7dmFyIHNyPW9yaWdpbmFsV2lkdGgvb3JpZ2luYWxIZWlnaHQsdHI9dy9oLHN4PTAsc3k9MCxzdz1vcmlnaW5hbFdpZHRoLHNoPW9yaWdpbmFsSGVpZ2h0O2lmKHNyPnRyKXtzdz1vcmlnaW5hbEhlaWdodCp0cjtzeD0ob3JpZ2luYWxXaWR0aC1zdykvMn1lbHNle3NoPW9yaWdpbmFsV2lkdGgvdHI7c3k9KG9yaWdpbmFsSGVpZ2h0LXNoKS8yfWN0eC5kcmF3SW1hZ2Uoc291cmNlSW1hZ2Usc3gsc3ksc3csc2gsMCwwLHcsaCl9ZWxzZXtjdHguZHJhd0ltYWdlKHNvdXJjZUltYWdlLDAsMCx3LGgpfX0KZnVuY3Rpb24gZW5jb2RlVG9MaW1pdChtaW1lLG1heFF1YWxpdHksdGFyZ2V0Qnl0ZXMsZG9uZSl7aWYoIXRhcmdldEJ5dGVzKXtjYW52YXMudG9CbG9iKGZ1bmN0aW9uKGJsb2Ipe2RvbmUoYmxvYiwnJyl9LG1pbWUsbWF4UXVhbGl0eSk7cmV0dXJufWlmKG1pbWU9PT0naW1hZ2UvcG5nJyl7Y2FudmFzLnRvQmxvYihmdW5jdGlvbihibG9iKXtpZihibG9iJiZibG9iLnNpemU8PXRhcmdldEJ5dGVzKWRvbmUoYmxvYiwnJyk7ZWxzZSBkb25lKG51bGwsJ1BORyBpcyBhYm92ZSB0aGUgc2VsZWN0ZWQgbGltaXQuIENob29zZSBKUEcgb3IgV2ViUCB0byBjb21wcmVzcyBpdCBmdXJ0aGVyLicpfSxtaW1lKTtyZXR1cm59Y2FudmFzLnRvQmxvYihmdW5jdGlvbih0b3BCbG9iKXtpZighdG9wQmxvYil7ZG9uZShudWxsLCdUaGUgaW1hZ2UgY291bGQgbm90IGJlIGV4cG9ydGVkLiBUcnkgc21hbGxlciBkaW1lbnNpb25zLicpO3JldHVybn1pZih0b3BCbG9iLnNpemU8PXRhcmdldEJ5dGVzKXtkb25lKHRvcEJsb2IsJycpO3JldHVybn12YXIgZmxvb3I9LjAxO2NhbnZhcy50b0Jsb2IoZnVuY3Rpb24obG93QmxvYil7aWYoIWxvd0Jsb2Ipe2RvbmUobnVsbCwnVGhlIGltYWdlIGNvdWxkIG5vdCBiZSBleHBvcnRlZC4gVHJ5IHNtYWxsZXIgZGltZW5zaW9ucy4nKTtyZXR1cm59aWYobG93QmxvYi5zaXplPnRhcmdldEJ5dGVzKXtkb25lKG51bGwsJ1RoZXNlIGRpbWVuc2lvbnMgY2Fubm90IGZpdCB1bmRlciB0aGUgc2VsZWN0ZWQgbGltaXQuIFRyeSBzbWFsbGVyIGRpbWVuc2lvbnMuJyk7cmV0dXJufXZhciBsb3c9Zmxvb3IsaGlnaD1tYXhRdWFsaXR5LGJlc3Q9bG93QmxvYix0cmllcz0wO2Z1bmN0aW9uIHNlYXJjaCgpe2lmKHRyaWVzPj0xMHx8aGlnaC1sb3c8LjAwMyl7ZG9uZShiZXN0LCcnKTtyZXR1cm59dHJpZXMrKzt2YXIgbWlkPShsb3craGlnaCkvMjtjYW52YXMudG9CbG9iKGZ1bmN0aW9uKGJsb2Ipe2lmKCFibG9iKXtkb25lKG51bGwsJ1RoZSBpbWFnZSBjb3VsZCBub3QgYmUgZXhwb3J0ZWQuIFRyeSBzbWFsbGVyIGRpbWVuc2lvbnMuJyk7cmV0dXJufWlmKGJsb2Iuc2l6ZTw9dGFyZ2V0Qnl0ZXMpe2Jlc3Q9YmxvYjtsb3c9bWlkfWVsc2V7aGlnaD1taWR9c2VhcmNoKCl9LG1pbWUsbWlkKX1zZWFyY2goKX0sbWltZSxmbG9vcil9LG1pbWUsbWF4UXVhbGl0eSl9CmZ1bmN0aW9uIGRvd25sb2FkUmVzdWx0KCl7aWYoIXNvdXJjZUltYWdlKXJldHVybjt2YXIgZD12YWxpZGF0ZURpbWVuc2lvbnMoKSx0YXJnZXQ9Z2V0VGFyZ2V0Qnl0ZXMoKTtpZihkLmVycm9yKXtzZXRTdGF0dXMoZC5lcnJvcix0cnVlKTtyZXR1cm59aWYodGFyZ2V0LmVycm9yKXtzZXRTdGF0dXModGFyZ2V0LmVycm9yLHRydWUpO3JldHVybn1zZXRTdGF0dXModGFyZ2V0LmJ5dGVzPydDb21wcmVzc2luZyB0byBmaXQgdW5kZXIgJyt0YXJnZXQua2IrJyBLQuKApic6J1ByZXBhcmluZyB5b3VyIGltYWdl4oCmJyxmYWxzZSk7ZG93bmxvYWRCdXR0b24uZGlzYWJsZWQ9dHJ1ZTt0cnl7cmVuZGVyQ2FudmFzKGQud2lkdGgsZC5oZWlnaHQpO3ZhciBtaW1lPWZvcm1hdFNlbGVjdC52YWx1ZSxxdWFsaXR5PXBhcnNlSW50KHF1YWxpdHlJbnB1dC52YWx1ZSwxMCkvMTAwO2VuY29kZVRvTGltaXQobWltZSxxdWFsaXR5LHRhcmdldC5ieXRlcyxmdW5jdGlvbihibG9iLGVycm9yTWVzc2FnZSl7ZG93bmxvYWRCdXR0b24uZGlzYWJsZWQ9ZmFsc2U7aWYoIWJsb2Ipe3NldFN0YXR1cyhlcnJvck1lc3NhZ2V8fCdUaGUgaW1hZ2UgY291bGQgbm90IGJlIGV4cG9ydGVkLiBUcnkgc21hbGxlciBkaW1lbnNpb25zLicsdHJ1ZSk7cmV0dXJufXZhciBleHQ9bWltZT09PSdpbWFnZS9qcGVnJz8nanBnJzptaW1lLnNwbGl0KCcvJylbMV0sb3V0cHV0TmFtZT1zYWZlQmFzZU5hbWUobmFtZUlucHV0LnZhbHVlfHwncmVzaXplZC1pbWFnZScpKycuJytleHQsb3V0cHV0VXJsPVVSTC5jcmVhdGVPYmplY3RVUkwoYmxvYiksbGluaz1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCdhJyk7bGluay5ocmVmPW91dHB1dFVybDtsaW5rLmRvd25sb2FkPW91dHB1dE5hbWU7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChsaW5rKTtsaW5rLmNsaWNrKCk7bGluay5yZW1vdmUoKTt3aW5kb3cuc2V0VGltZW91dChmdW5jdGlvbigpe1VSTC5yZXZva2VPYmplY3RVUkwob3V0cHV0VXJsKX0sMTUwMCk7c2V0U3RhdHVzKGQud2lkdGgrJyDDlyAnK2QuaGVpZ2h0KycgcHggwrcgJytieXRlc0xhYmVsKGJsb2Iuc2l6ZSkrJyBkb3dubG9hZGVkJyxmYWxzZSl9KX1jYXRjaChlcnJvcil7ZG93bmxvYWRCdXR0b24uZGlzYWJsZWQ9ZmFsc2U7c2V0U3RhdHVzKCdUaGF0IHNpemUgY291bGQgbm90IGJlIHByb2Nlc3NlZCBvbiB0aGlzIGRldmljZS4gVHJ5IHNtYWxsZXIgZGltZW5zaW9ucy4nLHRydWUpfX0KZHJvcHpvbmUuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLG9wZW5QaWNrZXIpO2Ryb3B6b25lLmFkZEV2ZW50TGlzdGVuZXIoJ2tleWRvd24nLGZ1bmN0aW9uKGUpe2lmKGUua2V5PT09J0VudGVyJ3x8ZS5rZXk9PT0nICcpe2UucHJldmVudERlZmF1bHQoKTtvcGVuUGlja2VyKCl9fSk7ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3JlcGxhY2VCdXR0b24nKS5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsb3BlblBpY2tlcik7ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jlc2V0QnV0dG9uJykuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLHJlc2V0QXBwKTtmaWxlSW5wdXQuYWRkRXZlbnRMaXN0ZW5lcignY2hhbmdlJyxmdW5jdGlvbigpe2xvYWRGaWxlKGZpbGVJbnB1dC5maWxlc1swXSl9KTtbJ2RyYWdlbnRlcicsJ2RyYWdvdmVyJ10uZm9yRWFjaChmdW5jdGlvbih0eXBlKXtkcm9wem9uZS5hZGRFdmVudExpc3RlbmVyKHR5cGUsZnVuY3Rpb24oZSl7ZS5wcmV2ZW50RGVmYXVsdCgpO2Ryb3B6b25lLmNsYXNzTGlzdC5hZGQoJ2lzLWRyYWdnaW5nJyl9KX0pO1snZHJhZ2xlYXZlJywnZHJvcCddLmZvckVhY2goZnVuY3Rpb24odHlwZSl7ZHJvcHpvbmUuYWRkRXZlbnRMaXN0ZW5lcih0eXBlLGZ1bmN0aW9uKGUpe2UucHJldmVudERlZmF1bHQoKTtkcm9wem9uZS5jbGFzc0xpc3QucmVtb3ZlKCdpcy1kcmFnZ2luZycpfSl9KTtkcm9wem9uZS5hZGRFdmVudExpc3RlbmVyKCdkcm9wJyxmdW5jdGlvbihlKXtsb2FkRmlsZShlLmRhdGFUcmFuc2Zlci5maWxlc1swXSl9KTsKcmF0aW9CdXR0b24uYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLGZ1bmN0aW9uKCl7cmF0aW9Mb2NrZWQ9IXJhdGlvTG9ja2VkO3JhdGlvQnV0dG9uLnNldEF0dHJpYnV0ZSgnYXJpYS1wcmVzc2VkJyxyYXRpb0xvY2tlZD8ndHJ1ZSc6J2ZhbHNlJyk7cmF0aW9CdXR0b24uc2V0QXR0cmlidXRlKCdhcmlhLWxhYmVsJyxyYXRpb0xvY2tlZD8nS2VlcCBhc3BlY3QgcmF0aW8nOidBc3BlY3QgcmF0aW8gdW5sb2NrZWQnKTtpZihyYXRpb0xvY2tlZClzeW5jRnJvbVdpZHRoKCl9KTt3aWR0aElucHV0LmFkZEV2ZW50TGlzdGVuZXIoJ2ZvY3VzJyxmdW5jdGlvbigpe2FjdGl2ZURpbWVuc2lvbj0nd2lkdGgnfSk7d2lkdGhJbnB1dC5hZGRFdmVudExpc3RlbmVyKCdpbnB1dCcsZnVuY3Rpb24oKXthY3RpdmVEaW1lbnNpb249J3dpZHRoJztzeW5jRnJvbVdpZHRoKCk7c2V0U3RhdHVzKCcnLGZhbHNlKX0pO2hlaWdodElucHV0LmFkZEV2ZW50TGlzdGVuZXIoJ2ZvY3VzJyxmdW5jdGlvbigpe2FjdGl2ZURpbWVuc2lvbj0naGVpZ2h0J30pO2hlaWdodElucHV0LmFkZEV2ZW50TGlzdGVuZXIoJ2lucHV0JyxmdW5jdGlvbigpe2FjdGl2ZURpbWVuc2lvbj0naGVpZ2h0JztzeW5jRnJvbUhlaWdodCgpO3NldFN0YXR1cygnJyxmYWxzZSl9KTt3aWR0aElucHV0LmFkZEV2ZW50TGlzdGVuZXIoJ2JsdXInLGZ1bmN0aW9uKCl7YWN0aXZlRGltZW5zaW9uPScnfSk7aGVpZ2h0SW5wdXQuYWRkRXZlbnRMaXN0ZW5lcignYmx1cicsZnVuY3Rpb24oKXthY3RpdmVEaW1lbnNpb249Jyd9KTsKQXJyYXkucHJvdG90eXBlLmZvckVhY2guY2FsbChkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCdbZGF0YS1zY2FsZV0nKSxmdW5jdGlvbihidXR0b24pe2J1dHRvbi5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsZnVuY3Rpb24oKXt2YXIgc2NhbGU9cGFyc2VGbG9hdChidXR0b24uZ2V0QXR0cmlidXRlKCdkYXRhLXNjYWxlJykpO3dpZHRoSW5wdXQudmFsdWU9TWF0aC5tYXgoMSxNYXRoLnJvdW5kKG9yaWdpbmFsV2lkdGgqc2NhbGUpKTtoZWlnaHRJbnB1dC52YWx1ZT1NYXRoLm1heCgxLE1hdGgucm91bmQob3JpZ2luYWxIZWlnaHQqc2NhbGUpKTtzZXRTdGF0dXMoJycsZmFsc2UpfSl9KTtmaXRCdXR0b25zLmZvckVhY2goZnVuY3Rpb24oYnV0dG9uKXtidXR0b24uYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLGZ1bmN0aW9uKCl7Zml0TW9kZT1idXR0b24uZ2V0QXR0cmlidXRlKCdkYXRhLWZpdCcpO2ZpdEJ1dHRvbnMuZm9yRWFjaChmdW5jdGlvbihpdGVtKXtpdGVtLmNsYXNzTGlzdC50b2dnbGUoJ2lzLWFjdGl2ZScsaXRlbT09PWJ1dHRvbil9KTt1cGRhdGVGaXRVaSgpfSl9KTtmb3JtYXRTZWxlY3QuYWRkRXZlbnRMaXN0ZW5lcignY2hhbmdlJyx1cGRhdGVGb3JtYXRVaSk7c2l6ZVByZXNldFNlbGVjdC5hZGRFdmVudExpc3RlbmVyKCdjaGFuZ2UnLHVwZGF0ZVNpemVVaSk7dGFyZ2V0U2l6ZUlucHV0LmFkZEV2ZW50TGlzdGVuZXIoJ2lucHV0Jyx1cGRhdGVTaXplVWkpO3F1YWxpdHlJbnB1dC5hZGRFdmVudExpc3RlbmVyKCdpbnB1dCcsZnVuY3Rpb24oKXtxdWFsaXR5VmFsdWUudGV4dENvbnRlbnQ9cXVhbGl0eUlucHV0LnZhbHVlKyclJ30pO2Rvd25sb2FkQnV0dG9uLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJyxkb3dubG9hZFJlc3VsdCk7d2luZG93LmFkZEV2ZW50TGlzdGVuZXIoJ2JlZm9yZXVubG9hZCcsZnVuY3Rpb24oKXtpZihzb3VyY2VVcmwpVVJMLnJldm9rZU9iamVjdFVSTChzb3VyY2VVcmwpfSk7dXBkYXRlU2l6ZVVpKCk7dXBkYXRlRml0VWkoKTsKfSkoKTsK"></script>
 <script integrity="sha384-2ojdIU05cJxikpIFzV1lRHanDEZTfx9egsIET6C5fKA4sLZp2RNjQtUFi6NQsKWj" crossorigin="anonymous" src="data:application/javascript;base64,d2luZG93LmFkZEV2ZW50TGlzdGVuZXIoJ2xvYWQnLGZ1bmN0aW9uKCl7J3VzZSBzdHJpY3QnOwp2YXIgbG9jYWxXYXJuaW5nPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdsb2NhbFdhcm5pbmcnKTtpZihsb2NhdGlvbi5wcm90b2NvbD09PSdmaWxlOicpbG9jYWxXYXJuaW5nLmNsYXNzTGlzdC5hZGQoJ2lzLXZpc2libGUnKTsKaWYod2luZG93LnBkZmpzTGliKXdpbmRvdy5wZGZqc0xpYi5HbG9iYWxXb3JrZXJPcHRpb25zLndvcmtlclNyYz0naHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvcGRmLmpzLzMuMTEuMTc0L3BkZi53b3JrZXIubWluLmpzJzsKdmFyIG1lbnVCdXR0b249ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ21lbnVCdXR0b24nKSx0b29sTmF2PWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0b29sTmF2Jyk7CnZhciByb3V0ZU1ldGE9e2ltYWdlOnt0aXRsZTonSW1hZ2UgUmVzaXplciDigJQgUmVzaXplIEpQRywgUE5HICYgV2ViUCBieSBQaXhlbHMgb3IgS0InLGRlc2NyaXB0aW9uOidSZXNpemUgSlBHLCBQTkcsIFdlYlAgYW5kIEdJRiBpbWFnZXMgdG8gZXhhY3QgZGltZW5zaW9ucyBvciBhIHRhcmdldCBmaWxlIHNpemUgc3VjaCBhcyA1MCBLQiwgMTAwIEtCIG9yIDIwMCBLQi4gRnJlZSwgcHJpdmF0ZSwgYnJvd3Nlci1iYXNlZCBpbWFnZSByZXNpemVyIGZvciBleGFtIGFuZCBkb2N1bWVudCB1cGxvYWRzLid9LGNvbXByZXNzOnt0aXRsZTonQ29tcHJlc3MgUERGIHRvIDEgTUIgb3IgU21hbGxlciDigJQgRnJlZSBPbmxpbmUgUERGIENvbXByZXNzb3InLGRlc2NyaXB0aW9uOidDb21wcmVzcyBQREYgZmlsZXMgb25saW5lIHRvIDEwMCBLQiwgMjAwIEtCLCA1MDAgS0IsIDEgTUIsIDIgTUIgb3IgYSBjdXN0b20gc2l6ZS4gQ2hvb3NlIDcyLCAxMDggb3IgMTQ0IERQSSBhbmQgcHJvY2VzcyBmaWxlcyBpbiB5b3VyIGJyb3dzZXIuJ30sbWVyZ2U6e3RpdGxlOidNZXJnZSBQREYgRmlsZXMgT25saW5lIEZyZWUg4oCUIENvbWJpbmUgUERGcyBpbiBZb3VyIEJyb3dzZXInLGRlc2NyaXB0aW9uOidNZXJnZSBQREYgZmlsZXMgb25saW5lIGZvciBmcmVlLiBSZW9yZGVyIHVwIHRvIDIwIFBERnMgYW5kIGNvbWJpbmUgZXZlcnkgcGFnZSBpbiB5b3VyIGJyb3dzZXIgd2l0aG91dCB1cGxvYWRpbmcgdGhlIGZpbGVzLid9fTsKZnVuY3Rpb24gcm91dGVGcm9tSGFzaCgpe3ZhciByb3V0ZSA9IChsb2NhdGlvbi5oYXNoIHx8ICcnKS5yZXBsYWNlKC9eI1wvPy8sICcnKTtyZXR1cm4gcm91dGU9PT0ncGRmLWNvbXByZXNzJz8nY29tcHJlc3MnOnJvdXRlPT09J3BkZi1tZXJnZSc/J21lcmdlJzonaW1hZ2UnfQpmdW5jdGlvbiBzaG93Um91dGUoKXt2YXIgcm91dGU9cm91dGVGcm9tSGFzaCgpLG1ldGE9cm91dGVNZXRhW3JvdXRlXSxkZXNjcmlwdGlvbj1kb2N1bWVudC5xdWVyeVNlbGVjdG9yKCdtZXRhW25hbWU9ImRlc2NyaXB0aW9uIl0nKSxvZ1RpdGxlPWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJ21ldGFbcHJvcGVydHk9Im9nOnRpdGxlIl0nKSxvZ0Rlc2NyaXB0aW9uPWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJ21ldGFbcHJvcGVydHk9Im9nOmRlc2NyaXB0aW9uIl0nKTtBcnJheS5wcm90b3R5cGUuZm9yRWFjaC5jYWxsKGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJy5yb3V0ZS12aWV3JyksZnVuY3Rpb24oZWwpe2VsLmhpZGRlbj1lbC5kYXRhc2V0LnJvdXRlIT09cm91dGV9KTtkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnaW1hZ2VDb250ZW50JykuaGlkZGVuPXJvdXRlIT09J2ltYWdlJztBcnJheS5wcm90b3R5cGUuZm9yRWFjaC5jYWxsKGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJ1tkYXRhLXJvdXRlLWxpbmtdJyksZnVuY3Rpb24obGluayl7aWYobGluay5kYXRhc2V0LnJvdXRlTGluaz09PXJvdXRlKWxpbmsuc2V0QXR0cmlidXRlKCdhcmlhLWN1cnJlbnQnLCdwYWdlJyk7ZWxzZSBsaW5rLnJlbW92ZUF0dHJpYnV0ZSgnYXJpYS1jdXJyZW50Jyl9KTtkb2N1bWVudC50aXRsZT1tZXRhLnRpdGxlO2lmKGRlc2NyaXB0aW9uKWRlc2NyaXB0aW9uLnNldEF0dHJpYnV0ZSgnY29udGVudCcsbWV0YS5kZXNjcmlwdGlvbik7aWYob2dUaXRsZSlvZ1RpdGxlLnNldEF0dHJpYnV0ZSgnY29udGVudCcsbWV0YS50aXRsZSk7aWYob2dEZXNjcmlwdGlvbilvZ0Rlc2NyaXB0aW9uLnNldEF0dHJpYnV0ZSgnY29udGVudCcsbWV0YS5kZXNjcmlwdGlvbik7dG9vbE5hdi5jbGFzc0xpc3QucmVtb3ZlKCdpcy1vcGVuJyk7bWVudUJ1dHRvbi5zZXRBdHRyaWJ1dGUoJ2FyaWEtZXhwYW5kZWQnLCdmYWxzZScpO2lmKHJvdXRlIT09J2ltYWdlJ3x8bG9jYXRpb24uaGFzaD09PScjaW1hZ2UtcmVzaXplcid8fGxvY2F0aW9uLmhhc2g9PT0nIy9pbWFnZS1yZXNpemVyJyl3aW5kb3cuc2Nyb2xsVG8oMCwwKX0KbWVudUJ1dHRvbi5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsZnVuY3Rpb24oKXt2YXIgb3Blbj0hdG9vbE5hdi5jbGFzc0xpc3QuY29udGFpbnMoJ2lzLW9wZW4nKTt0b29sTmF2LmNsYXNzTGlzdC50b2dnbGUoJ2lzLW9wZW4nLG9wZW4pO21lbnVCdXR0b24uc2V0QXR0cmlidXRlKCdhcmlhLWV4cGFuZGVkJyxvcGVuPyd0cnVlJzonZmFsc2UnKX0pO2RvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJyxmdW5jdGlvbihlKXtpZighdG9vbE5hdi5jb250YWlucyhlLnRhcmdldCkmJiFtZW51QnV0dG9uLmNvbnRhaW5zKGUudGFyZ2V0KSl7dG9vbE5hdi5jbGFzc0xpc3QucmVtb3ZlKCdpcy1vcGVuJyk7bWVudUJ1dHRvbi5zZXRBdHRyaWJ1dGUoJ2FyaWEtZXhwYW5kZWQnLCdmYWxzZScpfX0pO3dpbmRvdy5hZGRFdmVudExpc3RlbmVyKCdoYXNoY2hhbmdlJyxzaG93Um91dGUpO3Nob3dSb3V0ZSgpOwpmdW5jdGlvbiBieXRlc0xhYmVsKGJ5dGVzKXtpZihieXRlczwxMDI0KjEwMjQpcmV0dXJuIE1hdGgubWF4KDEsTWF0aC5yb3VuZChieXRlcy8xMDI0KSkrJyBLQic7cmV0dXJuKGJ5dGVzLygxMDI0KjEwMjQpKS50b0ZpeGVkKDIpKycgTUInfQpmdW5jdGlvbiBzYWZlTmFtZShuYW1lLGZhbGxiYWNrKXtyZXR1cm4obmFtZXx8ZmFsbGJhY2spLnJlcGxhY2UoL1wucGRmJC9pLCcnKS5yZXBsYWNlKC9bXmEtekEtWjAtOS1fIF0vZywnJykudHJpbSgpLnJlcGxhY2UoL1xzKy9nLCctJyl8fGZhbGxiYWNrfQpmdW5jdGlvbiBkb3dubG9hZEJ5dGVzKGJ5dGVzLG5hbWUpe3ZhciBibG9iPW5ldyBCbG9iKFtieXRlc10se3R5cGU6J2FwcGxpY2F0aW9uL3BkZid9KSx1cmw9VVJMLmNyZWF0ZU9iamVjdFVSTChibG9iKSxhPWRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2EnKTthLmhyZWY9dXJsO2EuZG93bmxvYWQ9bmFtZTtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGEpO2EuY2xpY2soKTthLnJlbW92ZSgpO3NldFRpbWVvdXQoZnVuY3Rpb24oKXtVUkwucmV2b2tlT2JqZWN0VVJMKHVybCl9LDE1MDApfQpmdW5jdGlvbiBwaWNrZXIoZHJvcCxpbnB1dCxoYW5kbGVyKXtmdW5jdGlvbiBvcGVuKCl7aW5wdXQudmFsdWU9Jyc7aW5wdXQuY2xpY2soKX1kcm9wLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJyxvcGVuKTtkcm9wLmFkZEV2ZW50TGlzdGVuZXIoJ2tleWRvd24nLGZ1bmN0aW9uKGUpe2lmKGUua2V5PT09J0VudGVyJ3x8ZS5rZXk9PT0nICcpe2UucHJldmVudERlZmF1bHQoKTtvcGVuKCl9fSk7aW5wdXQuYWRkRXZlbnRMaXN0ZW5lcignY2hhbmdlJyxmdW5jdGlvbigpe2hhbmRsZXIoaW5wdXQuZmlsZXMpfSk7WydkcmFnZW50ZXInLCdkcmFnb3ZlciddLmZvckVhY2goZnVuY3Rpb24odCl7ZHJvcC5hZGRFdmVudExpc3RlbmVyKHQsZnVuY3Rpb24oZSl7ZS5wcmV2ZW50RGVmYXVsdCgpO2Ryb3AuY2xhc3NMaXN0LmFkZCgnaXMtZHJhZ2dpbmcnKX0pfSk7WydkcmFnbGVhdmUnLCdkcm9wJ10uZm9yRWFjaChmdW5jdGlvbih0KXtkcm9wLmFkZEV2ZW50TGlzdGVuZXIodCxmdW5jdGlvbihlKXtlLnByZXZlbnREZWZhdWx0KCk7ZHJvcC5jbGFzc0xpc3QucmVtb3ZlKCdpcy1kcmFnZ2luZycpfSl9KTtkcm9wLmFkZEV2ZW50TGlzdGVuZXIoJ2Ryb3AnLGZ1bmN0aW9uKGUpe2hhbmRsZXIoZS5kYXRhVHJhbnNmZXIuZmlsZXMpfSl9CnZhciBNQVhfUERGX1BBR0VTPTIwMCxNQVhfTUVSR0VfRklMRVM9MjAsTUFYX01FUkdFX0JZVEVTPTEyMCoxMDI0KjEwMjQ7CnZhciBjb21wcmVzc0ZpbGU9bnVsbCxjb21wcmVzc0J5dGVzPW51bGwsY29tcHJlc3NQZGY9bnVsbCxjb21wcmVzc0xldmVsPSdzbWFsbCc7dmFyIGNvbXByZXNzSW5wdXQ9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2NvbXByZXNzSW5wdXQnKSxjb21wcmVzc0Ryb3B6b25lPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdjb21wcmVzc0Ryb3B6b25lJyksY29tcHJlc3NVcGxvYWQ9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2NvbXByZXNzVXBsb2FkVmlldycpLGNvbXByZXNzQ29udHJvbHM9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2NvbXByZXNzQ29udHJvbHMnKSxjb21wcmVzc1N0YXR1cz1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY29tcHJlc3NTdGF0dXMnKTsKZnVuY3Rpb24gc2V0Q29tcHJlc3NTdGF0dXModGV4dCxlcnJvcil7Y29tcHJlc3NTdGF0dXMudGV4dENvbnRlbnQ9dGV4dHx8Jyc7Y29tcHJlc3NTdGF0dXMuY2xhc3NMaXN0LnRvZ2dsZSgnaXMtZXJyb3InLCEhZXJyb3IpfQphc3luYyBmdW5jdGlvbiBsb2FkQ29tcHJlc3MoZmlsZXMpe3ZhciBmaWxlPWZpbGVzJiZmaWxlc1swXTtpZighZmlsZSlyZXR1cm47aWYoISgvXC5wZGYkL2kudGVzdChmaWxlLm5hbWUpfHxmaWxlLnR5cGU9PT0nYXBwbGljYXRpb24vcGRmJykpe2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdjb21wcmVzc0ZpbGVIaW50JykudGV4dENvbnRlbnQ9J0Nob29zZSBhIFBERiBmaWxlLic7cmV0dXJufWlmKGZpbGUuc2l6ZT40MCoxMDI0KjEwMjQpe2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdjb21wcmVzc0ZpbGVIaW50JykudGV4dENvbnRlbnQ9J1RoYXQgUERGIGlzIG92ZXIgNDAgTUIuJztyZXR1cm59aWYoIXdpbmRvdy5wZGZqc0xpYnx8IXdpbmRvdy5QREZMaWIpe2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdjb21wcmVzc0ZpbGVIaW50JykudGV4dENvbnRlbnQ9J1BERiB0b29scyBjb3VsZCBub3QgbG9hZC4gQ2hlY2sgeW91ciBjb25uZWN0aW9uLic7cmV0dXJufXRyeXtzZXRDb21wcmVzc1N0YXR1cygnT3BlbmluZyBQREbigKYnLGZhbHNlKTtjb21wcmVzc0J5dGVzPW5ldyBVaW50OEFycmF5KGF3YWl0IGZpbGUuYXJyYXlCdWZmZXIoKSk7Y29tcHJlc3NQZGY9YXdhaXQgd2luZG93LnBkZmpzTGliLmdldERvY3VtZW50KHtkYXRhOmNvbXByZXNzQnl0ZXMuc2xpY2UoKX0pLnByb21pc2U7aWYoY29tcHJlc3NQZGYubnVtUGFnZXM+TUFYX1BERl9QQUdFUyl7Y29tcHJlc3NQZGYuZGVzdHJveSgpO2NvbXByZXNzUGRmPW51bGw7Y29tcHJlc3NCeXRlcz1udWxsO2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdjb21wcmVzc0ZpbGVIaW50JykudGV4dENvbnRlbnQ9J0ZvciBzYWZlIHByb2Nlc3NpbmcsIGNob29zZSBhIFBERiB3aXRoIDIwMCBwYWdlcyBvciBmZXdlci4nO3JldHVybn1jb21wcmVzc0ZpbGU9ZmlsZTtkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY29tcHJlc3NGaWxlTmFtZScpLnRleHRDb250ZW50PWZpbGUubmFtZTtkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY29tcHJlc3NGaWxlTWV0YScpLnRleHRDb250ZW50PWNvbXByZXNzUGRmLm51bVBhZ2VzKycgcGFnZScrKGNvbXByZXNzUGRmLm51bVBhZ2VzPT09MT8nJzoncycpKycgwrcgJytieXRlc0xhYmVsKGZpbGUuc2l6ZSk7ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2NvbXByZXNzTmFtZScpLnZhbHVlPXNhZmVOYW1lKGZpbGUubmFtZSwnZG9jdW1lbnQnKSsnLWNvbXByZXNzZWQnO2NvbXByZXNzVXBsb2FkLnN0eWxlLmRpc3BsYXk9J25vbmUnO2NvbXByZXNzQ29udHJvbHMuY2xhc3NMaXN0LmFkZCgnaXMtdmlzaWJsZScpO3NldENvbXByZXNzU3RhdHVzKCcnLGZhbHNlKX1jYXRjaChlKXtkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY29tcHJlc3NGaWxlSGludCcpLnRleHRDb250ZW50PSdUaGlzIFBERiBjb3VsZCBub3QgYmUgb3BlbmVkLiBJdCBtYXkgYmUgZGFtYWdlZCBvciBwYXNzd29yZCBwcm90ZWN0ZWQuJ319CnBpY2tlcihjb21wcmVzc0Ryb3B6b25lLGNvbXByZXNzSW5wdXQsbG9hZENvbXByZXNzKTtkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY29tcHJlc3NSZXNldCcpLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJyxmdW5jdGlvbigpe2NvbXByZXNzRmlsZT1udWxsO2NvbXByZXNzQnl0ZXM9bnVsbDtjb21wcmVzc1BkZj1udWxsO2NvbXByZXNzQ29udHJvbHMuY2xhc3NMaXN0LnJlbW92ZSgnaXMtdmlzaWJsZScpO2NvbXByZXNzVXBsb2FkLnN0eWxlLmRpc3BsYXk9Jyc7c2V0Q29tcHJlc3NTdGF0dXMoJycsZmFsc2UpO2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdjb21wcmVzc0ZpbGVIaW50JykudGV4dENvbnRlbnQ9J1BERiDCtyB1cCB0byA0MCBNQid9KTsKdmFyIGxldmVsRGF0YT17YmFsYW5jZWQ6e3F1YWxpdHk6Ljg0LHNjYWxlOjEuNzUsaGVscDonQ2xlYXIgcGFnZXMgd2l0aCBtb2RlcmF0ZSBjb21wcmVzc2lvbiBmb3IgZG9jdW1lbnRzIHlvdSBwbGFuIHRvIHJlYWQgb3IgcHJpbnQuJ30sc21hbGw6e3F1YWxpdHk6LjY3LHNjYWxlOjEuMzUsaGVscDonR29vZCBxdWFsaXR5IGF0IGEgbG93ZXIgcmVzb2x1dGlvbiBmb3IgbW9zdCB1cGxvYWRzLid9LHN0cm9uZzp7cXVhbGl0eTouNDUsc2NhbGU6MSxoZWxwOidNYXhpbXVtIHJlZHVjdGlvbiBmb3Igc3RyaWN0IHBvcnRhbHMgYW5kIGVtYWlsIGF0dGFjaG1lbnRzLid9fTsKQXJyYXkucHJvdG90eXBlLmZvckVhY2guY2FsbChkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCdbZGF0YS1jb21wcmVzcy1sZXZlbF0nKSxmdW5jdGlvbihiKXtiLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJyxmdW5jdGlvbigpe2NvbXByZXNzTGV2ZWw9Yi5kYXRhc2V0LmNvbXByZXNzTGV2ZWw7QXJyYXkucHJvdG90eXBlLmZvckVhY2guY2FsbChkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCdbZGF0YS1jb21wcmVzcy1sZXZlbF0nKSxmdW5jdGlvbih4KXt4LmNsYXNzTGlzdC50b2dnbGUoJ2lzLWFjdGl2ZScseD09PWIpfSk7ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2NvbXByZXNzTGV2ZWxIZWxwJykudGV4dENvbnRlbnQ9bGV2ZWxEYXRhW2NvbXByZXNzTGV2ZWxdLmhlbHA7ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2NvbXByZXNzUmVzb2x1dGlvbicpLnZhbHVlPVN0cmluZyhsZXZlbERhdGFbY29tcHJlc3NMZXZlbF0uc2NhbGU9PT0xLjc1PzI6bGV2ZWxEYXRhW2NvbXByZXNzTGV2ZWxdLnNjYWxlPT09MS4zNT8xLjU6MSl9KX0pOwp2YXIgY29tcHJlc3NUYXJnZXQ9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2NvbXByZXNzVGFyZ2V0JyksY29tcHJlc3NDdXN0b209ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2NvbXByZXNzQ3VzdG9tVGFyZ2V0JyksY29tcHJlc3NDdXN0b21GaWVsZD1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY29tcHJlc3NDdXN0b21GaWVsZCcpLGNvbXByZXNzTGltaXROb3RlPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdjb21wcmVzc0xpbWl0Tm90ZScpO2Z1bmN0aW9uIHVwZGF0ZUNvbXByZXNzVGFyZ2V0KCl7dmFyIHY9Y29tcHJlc3NUYXJnZXQudmFsdWUsY3VzdG9tPXY9PT0nY3VzdG9tJztjb21wcmVzc0N1c3RvbUZpZWxkLmhpZGRlbj0hY3VzdG9tO3ZhciBuPWN1c3RvbT9wYXJzZUludChjb21wcmVzc0N1c3RvbS52YWx1ZSwxMCk6cGFyc2VJbnQodiwxMCk7Y29tcHJlc3NMaW1pdE5vdGUudGV4dENvbnRlbnQ9dj8obj49MTAwMD8obi8xMDAwKSsnIE1CJzpuKycgS0InKTonT3B0aW9uYWwnfWNvbXByZXNzVGFyZ2V0LmFkZEV2ZW50TGlzdGVuZXIoJ2NoYW5nZScsdXBkYXRlQ29tcHJlc3NUYXJnZXQpO2NvbXByZXNzQ3VzdG9tLmFkZEV2ZW50TGlzdGVuZXIoJ2lucHV0Jyx1cGRhdGVDb21wcmVzc1RhcmdldCk7dXBkYXRlQ29tcHJlc3NUYXJnZXQoKTsKZnVuY3Rpb24gY2FudmFzSnBlZyhjYW52YXMscXVhbGl0eSl7cmV0dXJuIG5ldyBQcm9taXNlKGZ1bmN0aW9uKHJlc29sdmUscmVqZWN0KXtjYW52YXMudG9CbG9iKGZ1bmN0aW9uKGJsb2Ipe2lmKCFibG9iKXtyZWplY3QobmV3IEVycm9yKCdlbmNvZGUnKSk7cmV0dXJufWJsb2IuYXJyYXlCdWZmZXIoKS50aGVuKGZ1bmN0aW9uKGIpe3Jlc29sdmUobmV3IFVpbnQ4QXJyYXkoYikpfSkuY2F0Y2gocmVqZWN0KX0sJ2ltYWdlL2pwZWcnLHF1YWxpdHkpfSl9CmFzeW5jIGZ1bmN0aW9uIGJ1aWxkQ29tcHJlc3NlZChzY2FsZSxxdWFsaXR5KXt2YXIgb3V0PWF3YWl0IHdpbmRvdy5QREZMaWIuUERGRG9jdW1lbnQuY3JlYXRlKCk7Zm9yKHZhciBpPTE7aTw9Y29tcHJlc3NQZGYubnVtUGFnZXM7aSsrKXtzZXRDb21wcmVzc1N0YXR1cygnQ29tcHJlc3NpbmcgcGFnZSAnK2krJyBvZiAnK2NvbXByZXNzUGRmLm51bVBhZ2VzKyfigKYnLGZhbHNlKTt2YXIgcGFnZT1hd2FpdCBjb21wcmVzc1BkZi5nZXRQYWdlKGkpLGJhc2U9cGFnZS5nZXRWaWV3cG9ydCh7c2NhbGU6MX0pLHZpZXc9cGFnZS5nZXRWaWV3cG9ydCh7c2NhbGU6c2NhbGV9KSxjYW52YXM9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnY2FudmFzJyksY3R4PWNhbnZhcy5nZXRDb250ZXh0KCcyZCcse2FscGhhOmZhbHNlfSk7Y2FudmFzLndpZHRoPU1hdGgubWF4KDEsTWF0aC5yb3VuZCh2aWV3LndpZHRoKSk7Y2FudmFzLmhlaWdodD1NYXRoLm1heCgxLE1hdGgucm91bmQodmlldy5oZWlnaHQpKTtjdHguZmlsbFN0eWxlPScjZmZmJztjdHguZmlsbFJlY3QoMCwwLGNhbnZhcy53aWR0aCxjYW52YXMuaGVpZ2h0KTthd2FpdCBwYWdlLnJlbmRlcih7Y2FudmFzQ29udGV4dDpjdHgsdmlld3BvcnQ6dmlld30pLnByb21pc2U7dmFyIGpwZz1hd2FpdCBjYW52YXNKcGVnKGNhbnZhcyxxdWFsaXR5KSxpbWc9YXdhaXQgb3V0LmVtYmVkSnBnKGpwZyksb3A9b3V0LmFkZFBhZ2UoW2Jhc2Uud2lkdGgsYmFzZS5oZWlnaHRdKTtvcC5kcmF3SW1hZ2UoaW1nLHt4OjAseTowLHdpZHRoOmJhc2Uud2lkdGgsaGVpZ2h0OmJhc2UuaGVpZ2h0fSk7Y2FudmFzLndpZHRoPTE7Y2FudmFzLmhlaWdodD0xfXJldHVybiBvdXQuc2F2ZSh7dXNlT2JqZWN0U3RyZWFtczp0cnVlfSl9CmRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdjb21wcmVzc0J1dHRvbicpLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJyxhc3luYyBmdW5jdGlvbigpe2lmKCFjb21wcmVzc1BkZilyZXR1cm47dmFyIGI9dGhpcyx0YXJnZXRWYWx1ZT1jb21wcmVzc1RhcmdldC52YWx1ZSx0YXJnZXRLYj10YXJnZXRWYWx1ZT09PSdjdXN0b20nP3BhcnNlSW50KGNvbXByZXNzQ3VzdG9tLnZhbHVlLDEwKTpwYXJzZUludCh0YXJnZXRWYWx1ZSwxMCl8fDA7aWYodGFyZ2V0VmFsdWU9PT0nY3VzdG9tJyYmKCF0YXJnZXRLYnx8dGFyZ2V0S2I8NTB8fHRhcmdldEtiPjIwMDAwKSl7c2V0Q29tcHJlc3NTdGF0dXMoJ0VudGVyIGEgdGFyZ2V0IGZyb20gNTAgS0IgdG8gMjAsMDAwIEtCLicsdHJ1ZSk7cmV0dXJufXZhciByZXNvbHV0aW9uPXBhcnNlRmxvYXQoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2NvbXByZXNzUmVzb2x1dGlvbicpLnZhbHVlKSxzZXR0aW5ncz1sZXZlbERhdGFbY29tcHJlc3NMZXZlbF0sc2NhbGU9cmVzb2x1dGlvbixxdWFsaXR5PXNldHRpbmdzLnF1YWxpdHk7Yi5kaXNhYmxlZD10cnVlO3RyeXt2YXIgYXR0ZW1wdHM9dGFyZ2V0S2I/W3tzOnNjYWxlLHE6cXVhbGl0eX0se3M6TWF0aC5tYXgoLjgsc2NhbGUqLjc4KSxxOk1hdGgubWluKHF1YWxpdHksLjQ4KX0se3M6TWF0aC5tYXgoLjYsc2NhbGUqLjU4KSxxOi4yOH0se3M6LjUscTouMTR9XTpbe3M6c2NhbGUscTpxdWFsaXR5fV0scmVzdWx0PW51bGw7Zm9yKHZhciBpPTA7aTxhdHRlbXB0cy5sZW5ndGg7aSsrKXtyZXN1bHQ9YXdhaXQgYnVpbGRDb21wcmVzc2VkKGF0dGVtcHRzW2ldLnMsYXR0ZW1wdHNbaV0ucSk7aWYoIXRhcmdldEtifHxyZXN1bHQubGVuZ3RoPD10YXJnZXRLYioxMDI0KWJyZWFrO2lmKGk8YXR0ZW1wdHMubGVuZ3RoLTEpc2V0Q29tcHJlc3NTdGF0dXMoJ1Jlc3VsdCBpcyAnK2J5dGVzTGFiZWwocmVzdWx0Lmxlbmd0aCkrJy4gVHJ5aW5nIHN0cm9uZ2VyIGNvbXByZXNzaW9u4oCmJyxmYWxzZSl9aWYodGFyZ2V0S2ImJnJlc3VsdC5sZW5ndGg+dGFyZ2V0S2IqMTAyNCl7c2V0Q29tcHJlc3NTdGF0dXMoJ1RoZSBzbWFsbGVzdCByZXN1bHQgaXMgJytieXRlc0xhYmVsKHJlc3VsdC5sZW5ndGgpKycsIGFib3ZlIHRoZSAnK3RhcmdldEtiKycgS0IgbGltaXQuIFRyeSBmZXdlciBwYWdlcyBvciBhIGxhcmdlciBsaW1pdC4nLHRydWUpfWVsc2V7ZG93bmxvYWRCeXRlcyhyZXN1bHQsc2FmZU5hbWUoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2NvbXByZXNzTmFtZScpLnZhbHVlLCdjb21wcmVzc2VkLWRvY3VtZW50JykrJy5wZGYnKTtzZXRDb21wcmVzc1N0YXR1cygnQ29tcHJlc3NlZCBmcm9tICcrYnl0ZXNMYWJlbChjb21wcmVzc0ZpbGUuc2l6ZSkrJyB0byAnK2J5dGVzTGFiZWwocmVzdWx0Lmxlbmd0aCkrJyBhbmQgZG93bmxvYWRlZC4nLGZhbHNlKX19Y2F0Y2goZSl7c2V0Q29tcHJlc3NTdGF0dXMoJ1RoaXMgUERGIGNvdWxkIG5vdCBiZSBjb21wcmVzc2VkIG9uIHRoaXMgZGV2aWNlLiBUcnkgYSBzbWFsbGVyIGZpbGUuJyx0cnVlKX1iLmRpc2FibGVkPWZhbHNlfSk7CnZhciBtZXJnZUZpbGVzPVtdLG1lcmdlSW5wdXQ9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ21lcmdlSW5wdXQnKSxtZXJnZURyb3B6b25lPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdtZXJnZURyb3B6b25lJyksbWVyZ2VVcGxvYWQ9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ21lcmdlVXBsb2FkVmlldycpLG1lcmdlRWRpdG9yPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdtZXJnZUVkaXRvcicpLG1lcmdlTGlzdD1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbWVyZ2VMaXN0JyksbWVyZ2VTdGF0dXM9ZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ21lcmdlU3RhdHVzJyk7CmZ1bmN0aW9uIHNldE1lcmdlU3RhdHVzKHRleHQsZXJyb3Ipe21lcmdlU3RhdHVzLnRleHRDb250ZW50PXRleHR8fCcnO21lcmdlU3RhdHVzLmNsYXNzTGlzdC50b2dnbGUoJ2lzLWVycm9yJywhIWVycm9yKX0KYXN5bmMgZnVuY3Rpb24gYWRkTWVyZ2VGaWxlcyhmaWxlcyl7aWYoIXdpbmRvdy5QREZMaWIpe2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdtZXJnZUZpbGVIaW50JykudGV4dENvbnRlbnQ9J1BERiB0b29scyBjb3VsZCBub3QgbG9hZC4gQ2hlY2sgeW91ciBjb25uZWN0aW9uLic7cmV0dXJufXZhciBsaXN0PUFycmF5LnByb3RvdHlwZS5zbGljZS5jYWxsKGZpbGVzfHxbXSkscmVtYWluaW5nPU1hdGgubWF4KDAsTUFYX01FUkdFX0ZJTEVTLW1lcmdlRmlsZXMubGVuZ3RoKTtpZighcmVtYWluaW5nKXtzZXRNZXJnZVN0YXR1cygnWW91IGNhbiBtZXJnZSB1cCB0byAyMCBQREZzIGF0IGEgdGltZS4nLHRydWUpO3JldHVybn1pZihsaXN0Lmxlbmd0aD5yZW1haW5pbmcpe2xpc3Q9bGlzdC5zbGljZSgwLHJlbWFpbmluZyk7c2V0TWVyZ2VTdGF0dXMoJ09ubHkgdGhlIGZpcnN0ICcrcmVtYWluaW5nKycgZmlsZXMgd2VyZSBhZGRlZC4gVGhlIGxpbWl0IGlzIDIwIFBERnMuJyx0cnVlKX1mb3IodmFyIGk9MDtpPGxpc3QubGVuZ3RoO2krKyl7dmFyIGY9bGlzdFtpXSxjdXJyZW50Qnl0ZXM9bWVyZ2VGaWxlcy5yZWR1Y2UoZnVuY3Rpb24odG90YWwsaXRlbSl7cmV0dXJuIHRvdGFsK2l0ZW0uZmlsZS5zaXplfSwwKTtpZihjdXJyZW50Qnl0ZXMrZi5zaXplPk1BWF9NRVJHRV9CWVRFUyl7c2V0TWVyZ2VTdGF0dXMoJ1NraXBwZWQgJytmLm5hbWUrJzogY29tYmluZWQgaW5wdXQgbXVzdCBzdGF5IHVuZGVyIDEyMCBNQi4nLHRydWUpO2NvbnRpbnVlfWlmKCEoL1wucGRmJC9pLnRlc3QoZi5uYW1lKXx8Zi50eXBlPT09J2FwcGxpY2F0aW9uL3BkZicpKXtzZXRNZXJnZVN0YXR1cygnU2tpcHBlZCAnK2YubmFtZSsnOiBjaG9vc2UgUERGIGZpbGVzIG9ubHkuJyx0cnVlKTtjb250aW51ZX1pZihmLnNpemU+NDAqMTAyNCoxMDI0KXtzZXRNZXJnZVN0YXR1cygnU2tpcHBlZCAnK2YubmFtZSsnOiBlYWNoIGZpbGUgbXVzdCBiZSA0MCBNQiBvciBsZXNzLicsdHJ1ZSk7Y29udGludWV9dHJ5e3NldE1lcmdlU3RhdHVzKCdSZWFkaW5nICcrZi5uYW1lKyfigKYnLGZhbHNlKTt2YXIgYnl0ZXM9bmV3IFVpbnQ4QXJyYXkoYXdhaXQgZi5hcnJheUJ1ZmZlcigpKSxkb2M9YXdhaXQgd2luZG93LlBERkxpYi5QREZEb2N1bWVudC5sb2FkKGJ5dGVzLHtpZ25vcmVFbmNyeXB0aW9uOmZhbHNlfSk7bWVyZ2VGaWxlcy5wdXNoKHtmaWxlOmYsYnl0ZXM6Ynl0ZXMscGFnZXM6ZG9jLmdldFBhZ2VDb3VudCgpLGlkOkRhdGUubm93KCkudG9TdHJpbmcoMzYpK2krTWF0aC5yYW5kb20oKS50b1N0cmluZygzNikuc2xpY2UoMil9KX1jYXRjaChlKXtzZXRNZXJnZVN0YXR1cygnU2tpcHBlZCAnK2YubmFtZSsnOiBpdCBtYXkgYmUgZGFtYWdlZCBvciBwYXNzd29yZCBwcm90ZWN0ZWQuJyx0cnVlKX19cmVuZGVyTWVyZ2UoKX0KZnVuY3Rpb24gcmVuZGVyTWVyZ2UoKXttZXJnZVVwbG9hZC5zdHlsZS5kaXNwbGF5PW1lcmdlRmlsZXMubGVuZ3RoPydub25lJzonJzttZXJnZUVkaXRvci5jbGFzc0xpc3QudG9nZ2xlKCdpcy12aXNpYmxlJyxtZXJnZUZpbGVzLmxlbmd0aD4wKTttZXJnZUxpc3QuaW5uZXJIVE1MPScnO3ZhciBwYWdlcz0wO21lcmdlRmlsZXMuZm9yRWFjaChmdW5jdGlvbihpdGVtLGluZGV4KXtwYWdlcys9aXRlbS5wYWdlczt2YXIgcm93PWRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO3Jvdy5jbGFzc05hbWU9J21lcmdlLWl0ZW0nO3Jvdy5pbm5lckhUTUw9JzxkaXYgY2xhc3M9Im1lcmdlLW51bWJlciI+JytTdHJpbmcoaW5kZXgrMSkucGFkU3RhcnQoMiwnMCcpKyc8L2Rpdj48ZGl2IGNsYXNzPSJtZXJnZS1pbmZvIj48ZGl2IGNsYXNzPSJtZXJnZS1uYW1lIj48L2Rpdj48ZGl2IGNsYXNzPSJtZXJnZS1tZXRhIj4nK2l0ZW0ucGFnZXMrJyBwYWdlJysoaXRlbS5wYWdlcz09PTE/Jyc6J3MnKSsnIMK3ICcrYnl0ZXNMYWJlbChpdGVtLmZpbGUuc2l6ZSkrJzwvZGl2PjwvZGl2PjxkaXYgY2xhc3M9Im1lcmdlLWFjdGlvbnMiPjxidXR0b24gdHlwZT0iYnV0dG9uIiBkYXRhLWFjdGlvbj0idXAiJysoaW5kZXg9PT0wPycgZGlzYWJsZWQnOicnKSsnPuKGkTwvYnV0dG9uPjxidXR0b24gdHlwZT0iYnV0dG9uIiBkYXRhLWFjdGlvbj0iZG93biInKyhpbmRleD09PW1lcmdlRmlsZXMubGVuZ3RoLTE/JyBkaXNhYmxlZCc6JycpKyc+4oaTPC9idXR0b24+PGJ1dHRvbiB0eXBlPSJidXR0b24iIGNsYXNzPSJtZXJnZS1yZW1vdmUiIGRhdGEtYWN0aW9uPSJyZW1vdmUiPsOXPC9idXR0b24+PC9kaXY+Jztyb3cucXVlcnlTZWxlY3RvcignLm1lcmdlLW5hbWUnKS50ZXh0Q29udGVudD1pdGVtLmZpbGUubmFtZTtyb3cucXVlcnlTZWxlY3RvcignW2RhdGEtYWN0aW9uPSJ1cCJdJykuc2V0QXR0cmlidXRlKCdhcmlhLWxhYmVsJywnTW92ZSAnK2l0ZW0uZmlsZS5uYW1lKycgdXAnKTtyb3cucXVlcnlTZWxlY3RvcignW2RhdGEtYWN0aW9uPSJkb3duIl0nKS5zZXRBdHRyaWJ1dGUoJ2FyaWEtbGFiZWwnLCdNb3ZlICcraXRlbS5maWxlLm5hbWUrJyBkb3duJyk7cm93LnF1ZXJ5U2VsZWN0b3IoJ1tkYXRhLWFjdGlvbj0icmVtb3ZlIl0nKS5zZXRBdHRyaWJ1dGUoJ2FyaWEtbGFiZWwnLCdSZW1vdmUgJytpdGVtLmZpbGUubmFtZSk7cm93LmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJyxmdW5jdGlvbihlKXt2YXIgYT1lLnRhcmdldC5kYXRhc2V0LmFjdGlvbjtpZighYSlyZXR1cm47aWYoYT09PSdyZW1vdmUnKW1lcmdlRmlsZXMuc3BsaWNlKGluZGV4LDEpO2lmKGE9PT0ndXAnJiZpbmRleD4wKXt2YXIgeD1tZXJnZUZpbGVzLnNwbGljZShpbmRleCwxKVswXTttZXJnZUZpbGVzLnNwbGljZShpbmRleC0xLDAseCl9aWYoYT09PSdkb3duJyYmaW5kZXg8bWVyZ2VGaWxlcy5sZW5ndGgtMSl7dmFyIHk9bWVyZ2VGaWxlcy5zcGxpY2UoaW5kZXgsMSlbMF07bWVyZ2VGaWxlcy5zcGxpY2UoaW5kZXgrMSwwLHkpfXJlbmRlck1lcmdlKCl9KTttZXJnZUxpc3QuYXBwZW5kQ2hpbGQocm93KX0pO2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdtZXJnZVN1bW1hcnknKS50ZXh0Q29udGVudD1tZXJnZUZpbGVzLmxlbmd0aCsnIGZpbGUnKyhtZXJnZUZpbGVzLmxlbmd0aD09PTE/Jyc6J3MnKSsnIMK3ICcrcGFnZXMrJyBwYWdlJysocGFnZXM9PT0xPycnOidzJyk7aWYoIW1lcmdlRmlsZXMubGVuZ3RoKXNldE1lcmdlU3RhdHVzKCcnLGZhbHNlKX0KcGlja2VyKG1lcmdlRHJvcHpvbmUsbWVyZ2VJbnB1dCxhZGRNZXJnZUZpbGVzKTtkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbWVyZ2VBZGQnKS5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsZnVuY3Rpb24oKXttZXJnZUlucHV0LnZhbHVlPScnO21lcmdlSW5wdXQuY2xpY2soKX0pO2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdtZXJnZUJ1dHRvbicpLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJyxhc3luYyBmdW5jdGlvbigpe2lmKG1lcmdlRmlsZXMubGVuZ3RoPDIpe3NldE1lcmdlU3RhdHVzKCdBZGQgYXQgbGVhc3QgdHdvIFBERnMgdG8gbWVyZ2UuJyx0cnVlKTtyZXR1cm59dmFyIGI9dGhpcztiLmRpc2FibGVkPXRydWU7c2V0TWVyZ2VTdGF0dXMoJ0NvbWJpbmluZyBQREZz4oCmJyxmYWxzZSk7dHJ5e3ZhciBvdXQ9YXdhaXQgd2luZG93LlBERkxpYi5QREZEb2N1bWVudC5jcmVhdGUoKTtmb3IodmFyIGk9MDtpPG1lcmdlRmlsZXMubGVuZ3RoO2krKyl7c2V0TWVyZ2VTdGF0dXMoJ0FkZGluZyAnKyhpKzEpKycgb2YgJyttZXJnZUZpbGVzLmxlbmd0aCsnOiAnK21lcmdlRmlsZXNbaV0uZmlsZS5uYW1lLGZhbHNlKTt2YXIgc291cmNlPWF3YWl0IHdpbmRvdy5QREZMaWIuUERGRG9jdW1lbnQubG9hZChtZXJnZUZpbGVzW2ldLmJ5dGVzLHtpZ25vcmVFbmNyeXB0aW9uOmZhbHNlfSksaW5kaWNlcz1zb3VyY2UuZ2V0UGFnZUluZGljZXMoKSxwYWdlcz1hd2FpdCBvdXQuY29weVBhZ2VzKHNvdXJjZSxpbmRpY2VzKTtwYWdlcy5mb3JFYWNoKGZ1bmN0aW9uKHApe291dC5hZGRQYWdlKHApfSl9dmFyIGJ5dGVzPWF3YWl0IG91dC5zYXZlKHt1c2VPYmplY3RTdHJlYW1zOnRydWV9KTtkb3dubG9hZEJ5dGVzKGJ5dGVzLHNhZmVOYW1lKGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdtZXJnZU5hbWUnKS52YWx1ZSwnbWVyZ2VkLWRvY3VtZW50JykrJy5wZGYnKTtzZXRNZXJnZVN0YXR1cyhieXRlc0xhYmVsKGJ5dGVzKSsnIG1lcmdlZCBQREYgZG93bmxvYWRlZC4nLGZhbHNlKX1jYXRjaChlKXtzZXRNZXJnZVN0YXR1cygnVGhlIFBERnMgY291bGQgbm90IGJlIG1lcmdlZC4gQSBmaWxlIG1heSBiZSBkYW1hZ2VkIG9yIHBhc3N3b3JkIHByb3RlY3RlZC4nLHRydWUpfWIuZGlzYWJsZWQ9ZmFsc2V9KTsKfSk7Cg=="></script>
+<script>
+(function(){
+'use strict';
+/* ===== Extra routes: sticker-maker, gif-maker (cooperates with the built-in router) ===== */
+var extraMeta={
+ 'sticker-maker':{route:'sticker',title:'Sticker Maker — Create Stickers from Images Online Free',description:'Turn any image into a sticker with a clean die-cut outline. Download a transparent PNG or a WhatsApp-ready 512 by 512 WebP sticker. Free and private — it runs in your browser.'},
+ 'gif-maker':{route:'gif',title:'GIF Maker — Convert Video to GIF Online Free',description:'Convert a short video clip of up to 5 seconds into a looping GIF. Choose the start point, width and frame rate, preview it and download. Free, private, in your browser.'}};
+function applyExtra(){
+  var raw=(location.hash||'').replace(/^#\/?/,'');
+  var info=extraMeta[raw]; if(!info) return;
+  Array.prototype.forEach.call(document.querySelectorAll('.route-view'),function(el){el.hidden=el.getAttribute('data-route')!==info.route;});
+  var ic=document.getElementById('imageContent'); if(ic) ic.hidden=true;
+  Array.prototype.forEach.call(document.querySelectorAll('[data-route-link]'),function(l){if(l.getAttribute('data-route-link')===info.route)l.setAttribute('aria-current','page');else l.removeAttribute('aria-current');});
+  document.title=info.title;
+  var d=document.querySelector('meta[name="description"]'); if(d) d.setAttribute('content',info.description);
+  var ogt=document.querySelector('meta[property="og:title"]'); if(ogt) ogt.setAttribute('content',info.title);
+  var ogd=document.querySelector('meta[property="og:description"]'); if(ogd) ogd.setAttribute('content',info.description);
+  var nav=document.getElementById('toolNav'); if(nav) nav.classList.remove('is-open');
+  var mb=document.getElementById('menuButton'); if(mb) mb.setAttribute('aria-expanded','false');
+  window.scrollTo(0,0);
+}
+/* The built-in router registers inside a window load handler, so do the same —
+   this guarantees applyExtra runs after it on both first load and hashchange. */
+function initExtraRoutes(){window.addEventListener('hashchange',applyExtra);applyExtra()}
+if(document.readyState==='complete')initExtraRoutes();
+else window.addEventListener('load',initExtraRoutes);
+
+function $(id){return document.getElementById(id)}
+function bytesLabel(b){if(b<1024)return b+' B';if(b<1024*1024)return Math.max(1,Math.round(b/1024))+' KB';return (b/(1024*1024)).toFixed(2)+' MB'}
+function downloadBlob(blob,name){var u=URL.createObjectURL(blob);var a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000)}
+function wireDrop(zone,input,onFile){
+  zone.addEventListener('click',function(){input.value='';input.click()});
+  zone.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();input.value='';input.click()}});
+  ['dragenter','dragover'].forEach(function(ev){zone.addEventListener(ev,function(e){e.preventDefault();zone.classList.add('is-dragging')})});
+  ['dragleave','drop'].forEach(function(ev){zone.addEventListener(ev,function(e){e.preventDefault();zone.classList.remove('is-dragging')})});
+  zone.addEventListener('drop',function(e){var f=e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files[0];if(f)onFile(f)});
+  input.addEventListener('change',function(){var f=input.files&&input.files[0];if(f)onFile(f)});
+}
+function wireSegment(attr,cb){
+  var btns=Array.prototype.slice.call(document.querySelectorAll('['+attr+']'));
+  btns.forEach(function(b){b.addEventListener('click',function(){btns.forEach(function(x){x.classList.remove('is-active')});b.classList.add('is-active');cb(b.getAttribute(attr))})});
+}
+
+/* ===== Sticker Maker ===== */
+var stkImg=null,stkStyle='diecut',stkAlpha=true,stkBase='sticker';
+var stkCanvas=$('stkCanvas'),stkCtx=stkCanvas.getContext('2d');
+function stkSetStatus(msg,isErr){var s=$('stkStatus');s.textContent=msg||'';s.classList.toggle('is-error',!!isErr)}
+function stkLoadFile(file){
+  if(!file) return;
+  if(file.type.indexOf('image/')!==0){stkSetStatus('Please choose an image file (PNG, JPG or WebP).',true);return}
+  if(file.size>40*1024*1024){stkSetStatus('That image is larger than 40 MB.',true);return}
+  var url=URL.createObjectURL(file);
+  var img=new Image();
+  img.onload=function(){
+    stkImg=img;stkBase=(file.name||'sticker').replace(/\.[^.]+$/,'').replace(/[^\w-]+/g,'-')||'sticker';
+    $('stkFilename').textContent=file.name||'image';
+    $('stkFileMeta').textContent=img.naturalWidth+' × '+img.naturalHeight+' · '+bytesLabel(file.size);
+    stkAlpha=stkDetectAlpha(img);
+    $('stkUploadView').hidden=true;$('stkEditor').hidden=false;
+    stkUpdateStyleHelp();stkRender();
+    URL.revokeObjectURL(url);
+  };
+  img.onerror=function(){stkSetStatus('That image could not be opened. Try a different file.',true);URL.revokeObjectURL(url)};
+  img.src=url;
+}
+function stkDetectAlpha(img){
+  try{
+    var c=document.createElement('canvas');c.width=48;c.height=48;var x=c.getContext('2d');
+    x.drawImage(img,0,0,48,48);var d=x.getImageData(0,0,48,48).data;
+    for(var i=3;i<d.length;i+=4){if(d[i]<250)return true}
+    return false;
+  }catch(e){return false}
+}
+function rrPath(x,ctxX,ctxY,w,h,r){x.beginPath();x.moveTo(ctxX+r,ctxY);x.arcTo(ctxX+w,ctxY,ctxX+w,ctxY+h,r);x.arcTo(ctxX+w,ctxY+h,ctxX,ctxY+h,r);x.arcTo(ctxX,ctxY+h,ctxX,ctxY,r);x.arcTo(ctxX,ctxY,ctxX+w,ctxY,r);x.closePath()}
+function stkUpdateStyleHelp(){
+  var h=$('stkStyleHelp');
+  if(stkStyle==='diecut')h.textContent=stkAlpha?'The outline traces the shape of your image, like a real printed sticker.':'Your image has no transparency, so the outline follows a rounded frame.';
+  else if(stkStyle==='circle')h.textContent='Your image is cropped into a circle badge with a bold outline.';
+  else h.textContent='Your image sits in a rounded frame with a bold outline.';
+}
+function stkRender(){
+  if(!stkImg)return;
+  var t=parseInt($('stkOutline').value,10)||0,color=$('stkColor').value;
+  $('stkOutlineValue').textContent=t+' px';
+  var maxDim=1080,scale=Math.min(1,maxDim/Math.max(stkImg.naturalWidth,stkImg.naturalHeight));
+  var iw=Math.max(1,Math.round(stkImg.naturalWidth*scale)),ih=Math.max(1,Math.round(stkImg.naturalHeight*scale));
+  var margin=t+16,cx,cy;
+  var work=document.createElement('canvas');work.width=iw;work.height=ih;var wx=work.getContext('2d');wx.drawImage(stkImg,0,0,iw,ih);
+  stkCtx.shadowColor='rgba(15,20,25,0.28)';stkCtx.shadowBlur=12;stkCtx.shadowOffsetY=4;
+  if(stkStyle==='circle'){
+    var side=Math.min(iw,ih),R=side/2;stkCanvas.width=side+2*margin;stkCanvas.height=side+2*margin;cx=stkCanvas.width/2;cy=stkCanvas.height/2;
+    stkCtx.beginPath();stkCtx.arc(cx,cy,R+t,0,Math.PI*2);stkCtx.fillStyle=color;stkCtx.fill();
+    stkCtx.shadowColor='transparent';stkCtx.shadowBlur=0;stkCtx.shadowOffsetY=0;
+    stkCtx.save();stkCtx.beginPath();stkCtx.arc(cx,cy,R,0,Math.PI*2);stkCtx.clip();
+    var sc=Math.max(side/iw,side/ih);stkCtx.drawImage(work,cx-(iw*sc)/2,cy-(ih*sc)/2,iw*sc,ih*sc);stkCtx.restore();
+  }else if(stkStyle==='rounded'){
+    stkCanvas.width=iw+2*margin;stkCanvas.height=ih+2*margin;
+    var rad=Math.round(Math.min(iw,ih)*0.10);
+    rrPath(stkCtx,margin-t,margin-t,iw+2*t,ih+2*t,rad+t);stkCtx.fillStyle=color;stkCtx.fill();
+    stkCtx.shadowColor='transparent';stkCtx.shadowBlur=0;stkCtx.shadowOffsetY=0;
+    stkCtx.save();rrPath(stkCtx,margin,margin,iw,ih,rad);stkCtx.clip();stkCtx.drawImage(work,margin,margin);stkCtx.restore();
+  }else{
+    stkCanvas.width=iw+2*margin;stkCanvas.height=ih+2*margin;
+    var sil=document.createElement('canvas');sil.width=iw;sil.height=ih;var sx=sil.getContext('2d');
+    if(stkAlpha){sx.drawImage(work,0,0)}
+    else{sx.save();rrPath(sx,0,0,iw,ih,Math.round(Math.min(iw,ih)*0.09));sx.clip();sx.drawImage(work,0,0);sx.restore()}
+    sx.globalCompositeOperation='source-in';sx.fillStyle=color;sx.fillRect(0,0,iw,ih);
+    var radii=t>0?[t,Math.round(t*0.66),Math.round(t*0.33)]:[0];
+    radii.forEach(function(r,idx){
+      var steps=r===0?1:Math.max(10,Math.round(r*1.6));
+      for(var i=0;i<steps;i++){var a=(i/steps)*Math.PI*2;stkCtx.drawImage(sil,margin+Math.cos(a)*r,margin+Math.sin(a)*r)}
+      if(idx===0){stkCtx.shadowColor='transparent';stkCtx.shadowBlur=0;stkCtx.shadowOffsetY=0}
+    });
+    if(stkAlpha){stkCtx.drawImage(work,margin,margin)}
+    else{stkCtx.save();rrPath(stkCtx,margin,margin,iw,ih,Math.round(Math.min(iw,ih)*0.09));stkCtx.clip();stkCtx.drawImage(work,margin,margin);stkCtx.restore()}
+  }
+  stkSetStatus('Sticker ready — '+stkCanvas.width+' × '+stkCanvas.height+' px.',false);
+}
+if($('stkDropzone')){
+  wireDrop($('stkDropzone'),$('stkFileInput'),stkLoadFile);
+  $('stkReplaceButton').addEventListener('click',function(){$('stkFileInput').value='';$('stkFileInput').click()});
+  wireSegment('data-stk-style',function(v){stkStyle=v;stkUpdateStyleHelp();stkRender()});
+  $('stkOutline').addEventListener('input',stkRender);
+  $('stkColor').addEventListener('input',stkRender);
+  $('stkResetButton').addEventListener('click',function(){stkImg=null;$('stkEditor').hidden=true;$('stkUploadView').hidden=false;stkSetStatus('',false)});
+  $('stkPngButton').addEventListener('click',function(){
+    if(!stkImg)return;
+    stkCanvas.toBlob(function(b){if(b){downloadBlob(b,stkBase+'-sticker.png');stkSetStatus('PNG sticker downloaded.',false)}},'image/png');
+  });
+  $('stkWaButton').addEventListener('click',function(){
+    if(!stkImg)return;
+    var c=document.createElement('canvas');c.width=512;c.height=512;var x=c.getContext('2d');
+    var sc=Math.min(512/stkCanvas.width,512/stkCanvas.height);
+    x.drawImage(stkCanvas,(512-stkCanvas.width*sc)/2,(512-stkCanvas.height*sc)/2,stkCanvas.width*sc,stkCanvas.height*sc);
+    var tryQ=function(q){
+      c.toBlob(function(b){
+        if(!b){stkSetStatus('Your browser could not export WebP here — use the PNG download instead.',true);return}
+        if(b.type!=='image/webp'){downloadBlob(b,stkBase+'-sticker-512.png');stkSetStatus('WebP is not supported in this browser, so a 512 × 512 PNG was downloaded instead.',false);return}
+        if(b.size<=100*1024||q<=0.3){downloadBlob(b,stkBase+'-sticker.webp');stkSetStatus('WhatsApp sticker downloaded — 512 × 512 WebP, '+bytesLabel(b.size)+'.',false)}
+        else tryQ(Math.round((q-0.08)*100)/100);
+      },'image/webp',q);
+    };
+    tryQ(0.92);
+  });
+}
+
+/* ===== GIF Maker ===== */
+var gifDur=3,gifW=480,gifFps=12,gifBusy=false,gifCancelled=false,gifEncoder=null,gifResultUrl=null;
+var gifVideo=$('gifVideo');
+function gifSetStatus(msg,isErr){var s=$('gifStatus');s.textContent=msg||'';s.classList.toggle('is-error',!!isErr)}
+function gifProgress(pct,label){$('gifProgressTrack').hidden=false;$('gifProgressFill').style.width=Math.round(pct*100)+'%';if(label)gifSetStatus(label,false)}
+var gifLibPromise=null,gifWorkerUrl=null;
+function loadGifLib(){
+  if(gifLibPromise)return gifLibPromise;
+  gifLibPromise=Promise.all([
+    new Promise(function(res,rej){
+      var s=document.createElement('script');
+      s.src='https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js';
+      s.integrity='sha384-4RMW82CWFobXY+HRHXe5go/V5acBhiIVGCT+2k7TEoxi7AiWKw8WoWb9qMU+FAFu';
+      s.crossOrigin='anonymous';
+      s.onload=function(){res(window.GIF)};
+      s.onerror=function(){rej(new Error('lib'))};
+      document.head.appendChild(s);
+    }),
+    fetch('https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.worker.js').then(function(r){if(!r.ok)throw new Error('worker');return r.text()}).then(function(t){gifWorkerUrl=URL.createObjectURL(new Blob([t],{type:'application/javascript'}))})
+  ]).then(function(r){return r[0]});
+  return gifLibPromise;
+}
+function gifLoadFile(file){
+  if(!file)return;
+  if(file.type.indexOf('video/')!==0&&!/\.(mp4|webm|mov|m4v)$/i.test(file.name||'')){gifSetStatus('Please choose a video file (MP4, WebM or MOV).',true);return}
+  if(gifResultUrl){URL.revokeObjectURL(gifResultUrl);gifResultUrl=null}
+  $('gifResultWrap').hidden=true;$('gifDownloadButton').hidden=true;$('gifDownloadButton').style.display='none';
+  gifVideo.src=URL.createObjectURL(file);
+  $('gifFilename').textContent=file.name||'video';
+  $('gifFileMeta').textContent=bytesLabel(file.size);
+  $('gifUploadView').hidden=true;$('gifEditor').hidden=false;
+  gifSetStatus('Video loaded — pick a start point and create your GIF.',false);
+}
+function gifSeek(t){
+  return new Promise(function(res){
+    var done=false;
+    function h(){if(done)return;done=true;gifVideo.removeEventListener('seeked',h);res()}
+    gifVideo.addEventListener('seeked',h);
+    try{gifVideo.currentTime=t}catch(e){h()}
+    setTimeout(h,1500);
+  });
+}
+function gifSetBusy(b){
+  gifBusy=b;
+  $('gifCreateButton').disabled=b;
+  $('gifCancelButton').hidden=!b;
+  if(!b)$('gifProgressTrack').hidden=true;
+}
+if($('gifDropzone')){
+  wireDrop($('gifDropzone'),$('gifFileInput'),gifLoadFile);
+  $('gifReplaceButton').addEventListener('click',function(){$('gifFileInput').value='';$('gifFileInput').click()});
+  wireSegment('data-gif-dur',function(v){gifDur=parseInt(v,10)});
+  wireSegment('data-gif-w',function(v){gifW=parseInt(v,10)});
+  wireSegment('data-gif-fps',function(v){gifFps=parseInt(v,10)});
+  gifVideo.addEventListener('loadedmetadata',function(){
+    var d=gifVideo.duration||0;
+    $('gifFileMeta').textContent=$('gifFileMeta').textContent+' · '+d.toFixed(1)+' s video';
+    var r=$('gifStart');r.max=Math.max(0,d-0.2).toFixed(1);r.value=0;$('gifStartValue').textContent='0.0 s';
+  });
+  $('gifStart').addEventListener('input',function(){
+    var v=parseFloat($('gifStart').value)||0;
+    $('gifStartValue').textContent=v.toFixed(1)+' s';
+    if(!gifBusy&&gifVideo.readyState>=1){try{gifVideo.currentTime=v}catch(e){}}
+  });
+  $('gifCancelButton').addEventListener('click',function(){
+    gifCancelled=true;
+    if(gifEncoder&&typeof gifEncoder.abort==='function'){try{gifEncoder.abort()}catch(e){}}
+    gifSetBusy(false);gifSetStatus('GIF creation cancelled.',false);
+  });
+  $('gifCreateButton').addEventListener('click',function(){
+    if(gifBusy)return;
+    if(!gifVideo.duration){gifSetStatus('Load a video first.',true);return}
+    gifCancelled=false;gifSetBusy(true);
+    gifSetStatus('Loading the GIF engine…',false);
+    loadGifLib().then(function(GIF){
+      return gifEncode(GIF);
+    }).catch(function(){
+      gifSetBusy(false);
+      gifSetStatus('The GIF engine could not load — check your internet connection and try again.',true);
+    });
+  });
+}
+function gifEncode(GIF){
+  return new Promise(function(resolve){
+    var start=parseFloat($('gifStart').value)||0;
+    var dur=Math.min(gifDur,Math.max(0.2,(gifVideo.duration||0)-start));
+    var w=gifW,h=Math.max(2,Math.round(w*gifVideo.videoHeight/Math.max(1,gifVideo.videoWidth)));if(h%2)h+=1;
+    var frames=Math.max(1,Math.min(100,Math.floor(dur*gifFps)));
+    var c=document.createElement('canvas');c.width=w;c.height=h;var ctx=c.getContext('2d');
+    var enc=new GIF({workers:2,quality:11,width:w,height:h,workerScript:gifWorkerUrl,repeat:0});
+    gifEncoder=enc;
+    enc.on('progress',function(p){if(!gifCancelled)gifProgress(0.5+p*0.5,'Encoding GIF… '+Math.round(p*100)+'%')});
+    enc.on('finished',function(blob){
+      gifEncoder=null;gifSetBusy(false);
+      if(gifCancelled){resolve();return}
+      if(gifResultUrl)URL.revokeObjectURL(gifResultUrl);
+      gifResultUrl=URL.createObjectURL(blob);
+      $('gifResultImg').src=gifResultUrl;
+      $('gifResultMeta').textContent='Your GIF — '+w+' × '+h+' px · '+bytesLabel(blob.size);
+      $('gifResultWrap').hidden=false;
+      var dl=$('gifDownloadButton');dl.href=gifResultUrl;dl.hidden=false;dl.style.display='block';
+      gifSetStatus('GIF ready — preview it below, then download.',false);
+      resolve();
+    });
+    var i=0;
+    gifSetStatus('Capturing frames…',false);
+    (function next(){
+      if(gifCancelled){gifSetBusy(false);resolve();return}
+      if(i>=frames){
+        gifProgress(0.5,'Encoding GIF…');
+        try{enc.render()}catch(e){gifSetBusy(false);gifSetStatus('Something went wrong while encoding. Try a shorter clip or a smaller width.',true)}
+        resolve();return;
+      }
+      gifProgress((i/frames)*0.5,'Capturing frames… '+Math.round((i/frames)*100)+'%');
+      gifSeek(start+(i/gifFps)).then(function(){
+        try{ctx.drawImage(gifVideo,0,0,w,h);enc.addFrame(ctx,{copy:true,delay:Math.round(1000/gifFps)})}catch(e){}
+        i++;next();
+      });
+    })();
+  });
+}
+})();
+
+</script>
 </body>
 </html>
